@@ -1,0 +1,17 @@
+{
+  "name": "木材干燥学复习系统（笔记版）",
+  "short_name": "木材干燥·笔记版",
+  "description": "木材干燥学复习资料、互动刷题与课堂笔记",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4efe3",
+  "theme_color": "#5a3f22",
+  "icons": [
+    {"src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
