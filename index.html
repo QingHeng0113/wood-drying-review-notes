@@ -157,7 +157,7 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
   header{position:static;box-shadow:none} nav{display:none}
   body{background:#fff} main{padding:0}
   .sec,.wrap{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
-  #view-quiz,#view-fix,#view-notes{display:none!important}
+  #view-quiz,#view-thanks{display:none!important}
   #view-review{display:block!important}
 }
 </style>
@@ -165,13 +165,12 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <body>
 <header>
   <h1>《木材干燥学》复习系统（笔记版） <span style="font-size:13px;color:#e7d3b3">Wood Drying · Review &amp; Quiz</span></h1>
-  <div class="sub">依据：王喜明《木材干燥学》（第3版）扫描版逐页 OCR ＋ 课堂笔记 ＋ 期中真题 ｜ 考试范围：除「木材干燥实验」外全书；干燥方法各章（8–14章）按概览掌握</div>
+  <div class="sub">依据：《木材干燥学》（第3版·王喜明）＋ 课堂笔记（唐婧整理，经本人同意收录）＋ 期中真题 ｜ 复习范围：除「木材干燥实验」外全书；一切以教材为准</div>
   <nav>
     <button data-view="review" class="on">📖 复习资料</button>
     <button data-view="quiz">✏️ 互动刷题</button>
-    <button data-view="notes">📓 课堂笔记</button>
-    <button data-view="fix">🪄 笔记纠错</button>
     <button data-view="midterm">🗂 期中真题卷</button>
+    <button data-view="thanks">🙏 鸣谢</button>
   </nav>
 </header>
 <main>
@@ -240,6 +239,16 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 </ul>
 </div>
 
+<div class="sec">
+<h2>📓 课堂笔记补充（第1章 绪论）<span class="en">Notes supplement · Ch.1</span></h2>
+<p class="note">以下为课堂笔记内容（唐婧整理），已按教材口径校正；<span class="nbadge red">考</span> 为原笔记标注的考点。</p>
+<p><b>干燥的原因/目的（笔记 4 条口径）<span class="nbadge red">红星·考</span></b>：①提高木材力学强度、胶合强度和表面装饰质量；②改善木材形状与尺寸稳定性；③防止腐朽和老化；④减轻木材重量。（与教材 5 条互为补充）</p>
+<p><b>干燥的意义（3 条）</b>：①合理利用与节约木材的一项重要技术手段；②木材加工中的一道重要工序；③对合理高效利用有限的森林资源、维持生态平衡、推动国民经济发展具有重要意义。</p>
+<p><b>发展趋势（笔记）</b>：目标——短周期、低能耗、低污染、低成本、高质量；方法工艺——a. 两段式干燥；b. 联合式干燥；c. 新型干燥技术；总体方向——绿色化、低碳化转型（余热回收、生物质能源）。</p>
+<p><b>笔记另列的干燥方法（补充 3 种）</b>：<b>远红外线干燥 far-infra-red drying</b>——设备简单、干燥基准便于调节；缺点是红外穿透力差，只适合薄板或半成品。<b>压力（加压）干燥 pressure drying</b>——质量好、周期较短；缺点是材色暗、节子周围易裂、能耗大、容器容积小。<b>化学（溶剂）干燥 chemical drying (solvent)</b>——笔记仅列名称。</p>
+<p><b>第1章词汇表（中英对照）</b>：wood / lumber / timber 木材；softwood 针叶材；hardwood 阔叶材；wood drying / seasoning 木材干燥；gradient 梯度；permeability 渗透性；drying mechanism 干燥机理；dimensional stability 尺寸稳定性；decoration 褪色；decay 腐朽；deterioration 老化；drying methods 干燥方法；natural drying / natural seasoning 自然干燥；artificial drying 人工干燥；drying kiln 干燥窑；air seasoning / air drying 气干；forced air drying 强制通风干燥；kiln drying 室干（窑干）；predrying 预干；conventional / usual drying 常规干燥；high temperature drying 高温干燥；special drying 特种干燥；dehumidification drying 除湿干燥；vacuum drying 真空干燥；solar drying 太阳能干燥；high frequency drying 高频干燥；microwave drying 微波干燥；far-infra-red drying 远红外线干燥；pressure drying 压力干燥；chemical drying (solvent) 化学干燥（溶剂干燥）。</p>
+</div>
+
 <div class="sec" id="r2">
 <h2>1 干燥介质（全书第1章） <span class="en">Drying media</span> <span class="tagchip">填空：3种介质</span></h2>
 <h3>介质总概念</h3>
@@ -282,6 +291,20 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <p><b>炉气 furnace gas</b>＝燃料燃烧产生的炽热气体；由固体燃料（煤、木材废料）、液体燃料（石油）或气体燃料（天然气等）燃烧产生；组成：氮、氧、二氧化碳、水蒸气、一氧化碳及灰分等。既作<b>干燥介质</b>又可作<b>载热体</b>。木燃料含硫极微、灰分少（1%～2%）。用作介质要求：少烟无烟、无火花灰尘、温度适宜稳定、气流量连续稳定。状态方程与参数计算和湿空气基本相同。</p>
 </div>
 
+<div class="sec">
+<h2>📓 课堂笔记补充（第2章 干燥介质）<span class="en">Notes supplement · Ch.2</span></h2>
+<p class="note">三种常用干燥介质（过热水蒸气、湿空气、炉气）与干燥介质定义<span class="nbadge red">考测</span>；以下为笔记的补充要点。</p>
+<ul>
+<li><b>饱和状态</b>：液面上蒸汽空间中的蒸汽与液体两相达到汽液动态平衡的状态。</li>
+<li><b>湿饱和蒸汽</b>：含有悬浮沸腾水滴的蒸汽；<b>（干）饱和蒸汽</b>：不含水滴的饱和蒸汽；<b>干度</b> x = m<sub>v</sub>/(m<sub>v</sub>+m<sub>w</sub>)（m<sub>v</sub> 饱和蒸汽质量、m<sub>w</sub> 水的质量）。</li>
+<li><b>过热蒸汽</b>：对饱和蒸汽继续加热，温度高于相同压力下饱和温度的蒸汽；<b>过热度</b>＝过热蒸汽温度与同压力下饱和温度之差（t − t<sub>s</sub>）。</li>
+<li><b>理想气体状态方程</b>：PV = RT；P<sub>v</sub> = m·R<sub>v</sub>·T。</li>
+<li><b>湿容量</b>：饱和湿空气的绝对湿度（最大值），ρ<sub>s</sub> = P<sub>s</sub>/(R<sub>v</sub>·T)；表示湿空气容纳水蒸气的能力，温度升高则湿容量增大。</li>
+<li><b>相对湿度</b> φ = P<sub>v</sub>/P<sub>s</sub>，可用干湿球温度计测定；φ = 1 为饱和湿空气，φ &lt; 1 为未饱和湿空气，φ = 0 为干空气。</li>
+<li><b>第2章词汇</b>：drying medium 干燥介质；superheated steam 过热水蒸汽；moist air 湿空气；furnace air 炉气；unsaturated water 未饱和水；saturated water 饱和水；wet saturated vapor 湿饱和蒸汽；(dry) saturated vapor 饱和蒸汽；moist / dry air 湿/干空气；dryness 干度；superheat degree 过热度。</li>
+</ul>
+</div>
+
 <div class="sec" id="r3">
 <h2>2 木材与水分（第2章） <span class="en">Moisture in wood</span> <span class="tagchip">填空：3种水分</span></h2>
 <h3>2.1 含水率的计算与测定</h3>
@@ -301,11 +324,11 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <h3>三种水分（期中填空第1题，中英文必背）<span class="star">★★★</span></h3>
 <ul>
 <li><b>自由水 free water</b>：存在于<b>大毛细管系统</b>（相互连通的细胞腔及细胞间隙）内；与木材呈<b>物理机械结合</b>，结合不紧密易逸出；大毛细管系统<b>只能向空气中蒸发水分，不能从空气吸收水分</b></li>
-<li><b>吸着水（结合水）absorbed / bound water</b>：存在于<b>微毛细管系统</b>（细胞壁内的各级微毛细管）中；与木材呈<b>物理化学＋物理机械结合</b>；微毛细管系统<b>既能向空气蒸发又能从空气吸收</b>水分</li>
+<li><b>吸着水（结合水）absorbed / bound water</b>：存在于<b>微毛细管系统</b>（细胞壁内的微毛细管）中；与木材呈<b>物理化学＋物理机械结合</b>；微毛细管系统<b>既能向空气蒸发又能从空气吸收</b>水分</li>
 <li><b>化合水 compound water</b>：与细胞壁化学成分化学结合的水（不能通过一般干燥排除）。<b>复合水分/bound water 口径</b>：吸着水＋化合水统称结合水</li>
 </ul>
 <h3>纤维饱和点 FSP<span class="star">★</span>（名词解释）</h3>
-<p><b>纤维饱和点 fiber saturation point</b>：干燥大气压条件下，当细胞腔内液态<b>自由水已蒸发干净</b>、而细胞壁内<b>结合水仍处于饱和状态</b>时的木材含水率。空气温度 20℃、φ=100% 时，各种木材纤维饱和点平均值为 <b>30%</b>（变异范围 23%～33%）；<b>随温度升高而降低</b>（20℃→30%；60℃→26%；120℃→18%）。<b>意义</b>：FSP 是木材下缩与湿胀的分界，是材性转变的重要临界（电导率、强度、收缩变化都在此分界）。</p>
+<p><b>纤维饱和点 fiber saturation point</b>：干燥大气压条件下，当细胞腔内液态<b>自由水已蒸发干净</b>、而细胞壁内<b>结合水仍处于饱和状态</b>时的木材含水率。空气温度 20℃、φ=100% 时，各种木材纤维饱和点平均值为 <b>30%</b>（变异范围 23%～33%）；<b>随温度升高而降低</b>（20℃→30%；60℃→26%；120℃→18%）。<b>意义</b>：FSP 是木材干缩与湿胀的分界，是材性转变的重要临界（电导率、强度、收缩变化都在此分界）。</p>
 <h3>吸湿、解吸与吸湿滞后（期中名词+判断）<span class="star">★★★</span></h3>
 <ul>
 <li><b>吸湿 adsorption</b>：较干木材的微毛细管系统从空气中<b>吸收</b>水分的现象；至稳定时的含水率＝<b>吸湿稳定含水率 Ma</b>。</li>
@@ -331,8 +354,20 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <ul>
 <li><b>弹性 elasticity</b>：除去外力恢复原形；衡量用<b>静曲弹性模量</b>；FSP 以下<b>越干弹性模量越大</b>（干木材弹性比湿木材好），FSP 以上不变。</li>
 <li><b>塑性 plasticity / 蠕变 creep</b>：恒定外力下变形随时间增加；卸载后弹性恢复＋蠕变部分恢复，不能恢复部分＝<b>永久变形（塑性变形）</b>。木材由此产生 蠕变 与 流变学特性。</li>
-<li><b>电学性质（⚠ 笔记纠错重点）</b>：木材导电借<b>离子移动</b>。规律：<b>电导率随含水率增加而急剧上升（绝干→FSP 可增大几百万倍），电阻率相应减小</b>；FSP 以上变化平缓。<b>横纹理电阻率比顺纹理大（针叶材 2.3～4.5 倍；阔叶材 2.5～8.0 倍）</b>，弦向&gt;径向；温度升高电阻率变小；密度大者电阻率小。电导率的对数与 FSP 以下含水率呈线性关系（电测法基础）。</li>
+<li><b>电学性质（重点）</b>：木材导电借<b>离子移动</b>。规律：<b>电导率随含水率增加而急剧上升（绝干→FSP 可增大几百万倍），电阻率相应减小</b>；FSP 以上变化平缓。<b>横纹理电阻率比顺纹理大（针叶材 2.3～4.5 倍；阔叶材 2.5～8.0 倍）</b>，弦向&gt;径向；温度升高电阻率变小；密度大者电阻率小。电导率的对数与 FSP 以下含水率呈线性关系（电测法基础）。</li>
 <li>介电常数、介质损耗角正切 tanδ 与高频/微波干燥相关（介电损耗 I = ε·tanδ 型式；tanδ 随频率、密度、纹理方向变化）。</li>
+</ul>
+</div>
+
+<div class="sec">
+<h2>📓 课堂笔记补充（第3章 木材水分与木材性质）<span class="en">Notes supplement · Ch.3</span></h2>
+<ul>
+<li><b>干缩率与干缩系数（笔记公式）</b>：干缩率 Y<sub>w</sub> = (L₁ − L<sub>m</sub>)/L₁ × 100%（L<sub>m</sub> 为干燥至含水率 m% 后的尺寸）；<b>干缩系数</b> K = Y<sub>w</sub>/(MC₁ − MC<sub>m</sub>)（纤维饱和点以下含水率每减少 1% 的干缩率）。</li>
+<li><b>电学性质（笔记）</b>：影响导电的因素——①温度↑导电↑；②含水率↑导电↑；③密度↑导电↑；④水溶液电解质；⑤纹理方向。规律：湿材 &gt; 干材；顺纹 &gt; 横纹。应用<span class="nbadge red">考</span>：含水率电测（电阻式测湿仪）在木材工业中的应用。</li>
+<li><b>构造与开裂变形（笔记）</b>：各向异性（干缩率 弦向 &gt; 径向）；压应力 → 侧旁开裂，拉应力 → 干燥塌陷；早晚材、心边材差异均有影响。</li>
+<li><b>含水率测量（笔记）</b>：常用称重法/烘干法与电测法；另有蒸馏法、CT 扫描。烘干法细节：试件放入 <b>103±2℃</b> 烘箱内 <b>6 h</b>，每隔 <b>2 h</b> 记录一次，前后两次质量相差不超过 <b>0.02 g</b> 即判绝干（与教材"烘至恒重"口径一致）。</li>
+<li><b>第3章词汇</b>：absolute moisture content 绝对含水率；relative moisture content 相对含水率；wet / moist wood 湿材；green wood 生材；half dried wood 半干材；air dried wood 气干材。</li>
+<li><b>补充综合术语表（中英对照）</b>：secondary wall 次生壁；microfibril 微纤丝；pit 纹孔；tylose 侵填体；free water 自由水；absorbed / bound water 吸着水；combined water 结合水；fiber saturated point (FSP) 纤维饱和点；adsorption stabilizing MC 吸湿稳定含水率；desorption stabilizing MC 解吸稳定含水率；equilibrium moisture content (EMC) 平衡含水率；initial / final / average moisture content 初始/终/平均含水率；adsorption 吸湿；desorption 解吸；sorption hysteresis 吸湿滞后；shrinkage 干缩；swelling 湿胀；shrinkage coefficient 干缩系数；anisotropy 各向异性；radial 径向；tangential 弦向；thermal property 热学性质；dielectric property 介电性质；earlywood 早材；latewood 晚材。</li>
 </ul>
 </div>
 
@@ -341,10 +376,10 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <h3>3.1–3.2 传热与传质</h3>
 <ul>
 <li><b>三种基本传热方式</b>：热传导 thermal conduction（导热）、热对流 thermal convection、热辐射 thermal radiation。</li>
-<li>导热按傅立叶定律：<b>Q = λ·A·(t₁−t₂)/δ</b>（W）；热流密度 q = λ·Δt/δ。导热系数规律：固＞液＞气；金属＞非金属。热流方向与温度梯度方向<b>相反</b>。</li>
+<li>导热按傅立叶定律：<b>Q = λ·A·(t₁−t₂)/δ</b>（W）；热流密度 q = λ·Δt/δ。导热系数规律：固＞液＞气；金属＞非金属。热流方向（温度降低方向）与温度升高方向<b>相反</b>。</li>
 <li><b>对流换热</b>：流体与壁面间既有宏观对流又有导热的联合传热；Q = α·A·Δt（α＝对流换热系数）。规律：介质与木材表面温差越大、厚度越小，传热越快。</li>
 <li><b>辐射</b>（斯蒂芬–玻尔茨曼定律）：物体辐射能力与其热力学温度的<b>四次方</b>成正比：<b>q = ε·σ·T⁴</b>；两物体间辐射换热 q = ε·σ·(T₁⁴ − T₂⁴)；σ ＝ 5.67×10⁻⁸ W/(m²·K⁴)。</li>
-<li><b>渗透性 permeability</b>：流体能穿透木材的必要条件＝孔隙连通（porosity 大于零且孔隙相互连通）。渗透模型：<b>平行毛细管模型</b>（木材纵向结构近似为均布圆毛细管），适于阔叶<b>散孔材</b>畅通的导管。</li>
+<li><b>渗透性 permeability</b>：木材让流体（气体、液体）通过的能力，取决于孔隙的连通情况；<b>渗透性好的木材（如桦木、水曲柳）水分排出快、干燥较快，渗透性差的木材（如青冈栎等）水分排出慢、干燥困难</b>（与"大／微毛细管系统"的构造直接相关）。</li>
 </ul>
 <h3>3.3–3.4 对流加热与非对流加热</h3>
 <ul>
@@ -355,7 +390,7 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 </ul>
 <h3>3.5 水分的蒸发与移动（课堂笔记 4.3，红笔考点）</h3>
 <ul>
-<li><b>表面蒸发的条件</b>（填空/简答句话）：只有当水面或湿物体表面上的空气<b>未被水蒸气饱和（φ &lt; 100%）时</b>，蒸发才能进行。φ 越小（空气越干），蒸发越快。蒸发强度还与（气体温度下的饱和蒸汽压 − 空气中水汽分压）之差成正比，并与水面上的<b>气流速度</b>有关：水面上有一层被水汽饱和的薄空气层（<b>边界层</b>，课堂表述：水分由表面穿过层流状态的边界层进入紊流气流），气流速度越大→边界层越薄→蒸发越快。</li>
+<li><b>表面蒸发的条件</b>：<b>当水面或湿物体表面上的空气没有达到水蒸气饱和的时候（即 φ &lt; 100%），才能发生蒸发</b>。φ 越小（空气越干），蒸发越快。蒸发强度还与（水面上饱和蒸汽压 − 空气中水汽分压）之差成正比，并与水面上的<b>气流速度</b>有关：水面上有一层被水汽饱和的薄空气层，气流速度越大 → 该层越薄 → 蒸发越快。</li>
 <li><b>干燥主要阶段（表层含水率低于 FSP 时）蒸发量由内部水分移动速度决定</b>。</li>
 <li><b>木材内水分传导的三条路径（必背）</b>：①<b>微毛细管路径</b>——液态水沿连续的基本纤丝间微毛细管在<b>毛细管张力差</b>作用下移动（表层含水率低→水层薄→张力大→由内向表）；②<b>大毛细管路径</b>——气态水（蒸汽）在<b>水蒸气分压差</b>作用下沿细胞腔—纹孔腔—纹孔膜上微孔向表面扩散（阻力主要在纹孔膜微孔）；③<b>混合路径</b>——液汽交替沿相邻微毛细管与细胞腔移动。<b>无需死记哪条为主，须会画图并写出名称。</b></li>
 <li><b>影响水分传导的因子</b>（划线）：树种（<b>环孔材</b>如栎木：纹孔少而孔径小，水分传导显著小于散孔材与针叶材）；部位（<b>心材纹孔多闭塞</b>，水分传导比边材小）；方向（<b>顺纹比横纹大 10～20 倍</b>；横纹中<b>径向比弦向大 15%～20%</b>，因木射线）；含水率（5%～FSP 区间内导水性变化不明显）、温度（升高导水性急剧增大）。</li>
@@ -374,21 +409,33 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <li><b>临界含水率 Mk</b>（名词解释）：等速期结束、减速期开始的瞬间含水率；因厚度上含水率分布不均，<b>Mk 常大于 FSP</b>；干燥速度越大、材越厚越密实，含水率越不均匀，Mk 越大、等速期越短。<b>干燥室内锯材（25 mm 以上等厚材）实际等速干燥期几乎不存在。</b></li>
 </ul>
 <div class="note"><b>画图口诀（简答画图题）：</b>①含水率分布曲线（沿厚度）：表面低、中心高，属于"凹"形分布，随干燥进行整条线下移、变平；②干燥曲线 M–τ：预热段几乎水平（速度 0）→ 干燥段从高速渐渐减慢 → 接近 Me 趋于水平；③温度曲线 t–τ：预热段陡升到冷却极限温度（≈湿球温度）→ 等速段保持不变 → 减速段逐渐升到介质温度。可在草图中标注 Mi、Mk、Me、FSP。</div>
-<h3>影响干燥速度的因素（简答荐必背）</h3>
+<h3>影响干燥速度的因素（简答题常考）</h3>
 <ul>
-<li><b>内因</b>：①树种与构造（心边材、纹孔、早晚材；渗透性）②木材<b>厚度</b>（厚板→梯度大→慢）③含水率水平④心边材⑤纹理方向（径面/弦面）。</li>
-<li><b>外因</b>：①干燥介质<b>温度</b>（提高温度→湿容量增大、干燥势强）②<b>相对湿度</b>（湿度低→分压差/温差大→快，但注意高低水分阶段）③<b>气流循环速度</b>（减薄饱和边界层；一般要求通过材堆 ≥1 m/s 使达紊流；高含水期可 3～5 m/s，一般 1.5～2 m/s 较经济；过后半期可适当降低气流速度节省电耗）。</li>
-<li><b>简答「如何提高针叶材干燥速度」答题要点</b>：提高介质温度（高温室干适用针叶材）；降低相对湿度（加大干湿球温差、增大干燥势）；加大气流循环速度（减薄边界层，但兼顾电耗）；加上合理装堆与低含水率阶段调整。（注意内因材料已定，主要是外因三招＋合理选基准。）</li>
+<li><b>木材自身方面</b>：①树种与构造（纹孔、心材与边材、早晚材；渗透性）②木材<b>厚度</b>（厚板→含水率梯度大→干燥慢）③含水率水平④纹理方向（横纹方向中径向水分移动比弦向快 15%～20%）。</li>
+<li><b>干燥介质方面</b>：①介质<b>温度</b>（提高温度→湿容量增大、蒸发势强）②<b>相对湿度</b>（湿度低→蒸发快，但各含水率阶段需分别控制）③<b>气流循环速度</b>（减小表面饱和空气层厚度；一般要求通过材堆 ≥1 m/s 使气流达紊流；高含水率阶段可适当提高、干燥后期可适当降低以节省电耗）。</li>
+<li><b>简答「如何提高针叶材干燥速度」答题要点</b>：提高介质温度（高温室干适用针叶材）；降低相对湿度（加大干湿球温差、增大干燥势）；加大气流循环速度（减薄边界层，但兼顾电耗）；加上合理装堆与低含水率阶段调整。（木材本身条件固定时，主要从介质温度、相对湿度、气流速度三方面入手，并合理选择干燥基准。）</li>
 </ul>
 <h3>3.7 木材干燥的应力与变形（课堂红笔重点）<span class="star">★★★</span></h3>
 <p><b>应力三来源</b>：①含水率分布不均；②内外层干缩不一致；③构造上的各向异性（径、弦向干缩不同）。</p>
 <ul>
 <li><b>两类应力</b>：<b>含水率（弹性）应力</b>（含水率分布均匀后消失）；<b>残余应力</b>（塑化变形固定后保留）。<span class="formula">全应力 = 含水率应力 + 残余应力</span> 干燥过程影响质量的是<b>全应力</b>；干燥结束（含水率均匀）后仍影响质量的是<b>残余应力</b>。</li>
 <li><b>应力四阶段（必背·可画图）</b>：Ⅰ 干燥刚开始——内外层均&gt;FSP，无应力（试片梳齿高相等、剖开平直）；Ⅱ 干燥初期——<b>表层收缩</b>受内层牵制：<b>外层受拉、内层受压</b>（拉应力区域小而应力大，易<b>表裂</b>；试片剖开时<b>两半片向外弯</b>，含水率均匀后因表层"塑性变定"反而向内弯）；Ⅲ 干燥中期——内层也降到 FSP，表层硬化的影响使表芯干缩差距缩小，应力<b>暂时平衡</b>（梳齿相同平直，均匀后内弯）；Ⅳ 干燥末期——表层早已塑性变定停止干缩，<b>内层继续干缩受表层牵制：内层受拉、表层受压</b>（内层拉应力超横纹抗拉强度即<b>内裂·蜂窝裂</b>；剖开时两半片向内弯，均匀后弯得更厉害）。</li>
-<li><b>表面硬化（case hardening，塑性变定）</b>：表层 longtime 伸张状态下发生蠕变并¢定 → 干缩不完全。防止/消除：适时<b>中间调湿处理</b>（向窑内喷低压饱和蒸汽或雾化水，使硬化表层吸湿软化可塑，重新获得补充干缩），硬阔叶材厚板宜<b>提早且多次</b>。</li>
+<li><b>表面硬化（case hardening，塑性变定）</b>：表层长时间处于伸张状态下发生蠕变并固定 → 干缩不完全。防止/消除：适时<b>中间调湿处理</b>（向窑内喷低压饱和蒸汽或雾化水，使硬化表层吸湿软化可塑，重新获得补充干缩），硬阔叶材厚板宜<b>提早且多次</b>。</li>
 <li><b>各向异性附加应力</b>：弦切板外板面（近树皮侧）干缩大于内板面→产生附加拉应力，与含水率应力叠加易<b>外板面开裂</b>；径级大原木或带髓心方材：圆周方向（近似弦向）干缩大于半径方向→表层附加拉、中心附加压 →表层易<b>径裂</b>。</li>
 <li><b>应力与变形的检验方法</b>：实测法；<b>切片分析法</b>（比较切片瞬间变形＋含水率均匀后的残余变形，切片统一厚 7 mm）；<b>叉齿法</b>（应力试片锯成叉齿形：齿长 50～70 mm、宽 7 mm，齿口朝板心；室温 24 h 或 70～100℃烘 2～3 h 均衡含水率后，量叉齿变形计算应力指标。|Y| ≤ 2% 应力可忽略；&gt;5% 应力较大应调湿处理）。判断：<b>外弯＝表层拉（外层试片定义负应力）；内弯＝表层压（正应力）。</b></li>
 <li><b>新应变理论</b>：总应变 = 干缩应变 + 弹性应变 + 黏弹性蠕变应变 + 机械吸附蠕变应变（机械吸附蠕变为<b>永久残余应变</b>）。</li>
+</ul>
+</div>
+
+<div class="sec">
+<h2>📓 课堂笔记补充（第4章 物理基础）<span class="en">Notes supplement · Ch.4</span></h2>
+<ul>
+<li><b>考点标注</b>：<span class="nbadge red">P87 考</span> 表面蒸发条件 / 水分移动路径（4.3 节）；<span class="nbadge red">P90 重点</span> 木材干燥应力应变产生的机理（4.5 节）。</li>
+<li><b>对流换热（笔记定义）</b>：流体（干燥介质）与相互接触的固体表面（木材、干燥室壁面）之间的热量传递现象，是导热和热对流两种基本传热方式共同作用的结果。</li>
+<li><b>水分移动路径（笔记）</b>：MC &lt; FSP 时，在细胞壁横断面的含水率梯度或水蒸气分压梯度下，吸着水穿过连续的细胞壁（b₁），并间歇穿过横穿壁（b₂）与纹孔膜（pit membrane），即 <b>b₂-a-b₂ 路径</b>，作扩散（diffusion）移动。</li>
+<li><b>干燥曲线标注（笔记）</b>：W<sub>i</sub> 初始含水率、W<sub>c</sub>、W<sub>f</sub>、W<sub>e</sub>（平衡含水率）、fsp、t=t<sub>c</sub>、k（干燥曲线）、温度曲线。</li>
+<li><b>渗透性（笔记）</b>：必要条件——孔隙率大于零且孔隙相互连通；<b>简单平行毛细管模型</b>：木材纵向结构近似为相互平行、均布的圆形毛细管，适于阔叶散孔材中畅通的导管。</li>
+<li><b>干燥缺陷的原因（笔记）</b>：①生长应力 growth stress；②干燥应力 drying stress。</li>
 </ul>
 </div>
 
@@ -436,7 +483,7 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <p><b>含水率检测</b>：</p>
 <table>
 <tr><th>方法</th><th>对象/操作</th><th>特点</th></tr>
-<tr><td class="n"><b>称重法（烘工法）</b>★</td><td>小试片刮毛刺立即称重→<b>103±2℃</b>烘箱烘干→每隔一定时间称重，到最后<b>连续两次称重相等或相差极小</b>（恒重）→ 由 M=(G湿−G干)/G干 计算</td><td>准确可靠、不受含水率范围限制、是基本方法与仲裁手段；缺点：需截试片<b>破坏木材</b>、需时较长（课堂口径：先烘 6 h，后每隔 2 h 称一次、差值 ≤0.02 g 判绝干）</td></tr>
+<tr><td class="n"><b>称重法（烘工法）</b>★</td><td>小试片刮毛刺立即称重→<b>103±2℃</b>烘箱烘干→每隔一定时间称重，到最后<b>连续两次称重相等或相差极小</b>（恒重）→ 由 M=(G湿−G干)/G干 计算</td><td>准确可靠、不受含水率范围限制、是基本方法与仲裁手段；缺点：需截试片<b>破坏木材</b>、需时较长</td></tr>
 <tr><td class="n"><b>电测法</b>★</td><td><b>直流电阻式</b>（兆欧表式，探针插入）与<b>交流介电式</b>（介电常数+损耗角）</td><td>快速方便、不破坏木材；测量范围受限（电阻式有效区间 <b>6%～30%</b>：&gt;30% 曲线平坦、&lt;6% 接近绝缘体、&gt;60% 接近导体）。使用注意：<b>树种修正</b>、<b>温度修正</b>（每升温 10℃ 读数约偏大 1.5%，仪器标定基于 20℃）、<b>纹理方向</b>（仪表多按横向电阻标定；横纹电阻率比顺纹大 2～3 倍）；探针插入深度取板厚 <b>1/5～1/4</b></td></tr>
 </table>
 <p><b>干燥应力的检验</b>：应力检验板+应力试片（10 mm 厚）。方法：<b>实测法</b>（直接测应力值，麻烦费时）；<b>切片分析法</b>（切开瞬时变形反映弹性干燥应力"湿应力"，气干 24 h 以上或 70～100℃烘 2～3 h 后测得<b>残余干燥应力</b>；应力指数 Y = 挠度/试片长度×100%；<b>外弯＝表层受拉＝负应力，内弯＝正应力</b>）；<b>叉齿分析法</b>（最常用；|Yb| ≤ 2% 忽略，&gt;5% 需调湿处理）。现场：通过<b>检验窗</b>放置含水率检验板（3 块以上，探针预先装好）。</p>
@@ -594,412 +641,15 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 </div>
 </section>
 
-<!-- =================== 课堂笔记 =================== -->
-<section id="view-notes" hidden>
+<!-- =================== 鸣谢 =================== -->
+<section id="view-thanks" hidden>
 <div class="sec">
-<h2>📓 课堂笔记全文 <span class="en">Class notes（经笔记作者同意收录）</span></h2>
-<p class="note">本页为课堂笔记（手写 + 课堂投影照片转录）全文，中英对照，保留原稿的【考】【待核】【不全】等标注。正文其余内容以教材为准；笔记中与教材不一致处见「🪄 笔记纠错」页。</p>
-<div class="notes">
-<h3 class="ntitle">木材干燥学（Wood Drying）课堂笔记整理</h3>
-<div class="nbq">说明：本文件由全部手写笔记照片 + 课堂投影照片转录整理（已对重复照片去重），采用中英对照。手写模糊处标注<span class="nbadge amber">待核</span>，被照片边缘裁切、内容不全处标注<span class="nbadge amber">不全</span>。供后续资料整合使用。</div>
-<h3>第1章 / 绪论：干燥方法与发展趋势</h3>
-<h4>1.1 基本原理、干燥原因与意义</h4>
-<p><b>1.1.2 Basic principles of wood drying 木材干燥基本原理</b></p>
-<ul>
-<li>利用三种梯度：木材含水率梯度(moisture gradient)、温度梯度(temperature gradient)、水蒸气压力梯度(water vapor pressure gradient)。</li>
-<li>水分以液态和汽态两种形式由木材内部向表面移动，通过干燥介质(drying medium)蒸发。</li>
-<li>规律：针叶材比阔叶材更易干燥。</li>
-</ul>
-<p><b>1.1.3 Reasons for wood drying 木材干燥的原因 / 目的<span class="nbadge red">红星·考</span></b></p>
-<ol>
-<li>Improve mechanical strength, bonding strength and surface decoration quality of wood（提高木材力学强度、胶合强度和表面装饰质量）。</li>
-<li>Improve wood shape and dimensional stability（改善木材形状与尺寸稳定性）。</li>
-<li>Prevent decay and deterioration（防止腐朽和老化）。</li>
-<li>Reduce the wood weight（减轻木材重量）。</li>
-</ol>
-<p><b>Significance of wood drying 木材干燥的意义</b></p>
-<ol>
-<li>合理利用与节约木材的一项重要技术手段。</li>
-<li>木材加工中一道重要工序。</li>
-<li>对合理高效利用有限的森林资源、维持生态平衡、推动国民经济发展具有重要意义。</li>
-</ol>
-<h4>1.2 Wood drying methods 木材干燥方法</h4>
-<h5>一、Air drying 气干（自然干燥）</h5>
-<p><b>Natural 自然气干</b></p>
-<ul>
-<li>优点：less expensive 成本低；利用 Solar 太阳能。</li>
-<li>缺点：</li>
-</ul>
-<ol>
-<li>Depending on climate 依赖气候条件。</li>
-<li>Slower 速度慢。</li>
-<li>It takes several months 耗时数月。</li>
-<li>It's easy to produce insect decay, discoloration, cracking and other defects 易产生虫蛀、腐朽、变色、开裂等缺陷。</li>
-</ol>
-<p><b>Forced 强制通风气干</b>（use the fan to provide wind speed 用风机提供风速）</p>
-<ul>
-<li>优点：</li>
-</ul>
-<ol>
-<li>Dry quality is better 干燥质量更好。</li>
-<li>Drying time is shorter 干燥时间更短。</li>
-</ol>
-<ul>
-<li>缺点：costs increased by 1/3 成本增加约 1/3。</li>
-</ul>
-<h5>二、人工干燥 Kiln drying 窑干（调控相对湿度，引入热量）</h5>
-<p><b>(1) Conventional drying 常规干燥</b>（笔记仅列标题）</p>
-<p><b>(2) High temperature drying 高温干燥</b>（温度约 70℃~140℃）</p>
-<ul>
-<li>优点：Fast 速度快；尺寸稳定性好；无着火危险。</li>
-<li>缺点：易出现干燥缺陷(defect)、材色变深、表面硬化(case hardening)，不易加工。</li>
-<li>适用：适合干燥针叶树材和软阔叶树材中的薄材。</li>
-</ul>
-<p><b>(3) Dehumidification drying 除湿干燥（降温干燥）</b></p>
-<ul>
-<li>Characteristics 特点：</li>
-</ul>
-<ol>
-<li>理论上没有额外热量，是一种节能的干燥方法，干燥质量好，且不污染环境。</li>
-<li>干燥周期长，电耗高。</li>
-<li>与其他干燥方法联合使用具有发展前景；也可作为预干。</li>
-</ol>
-<p><b>(4) Solar drying 太阳能干燥</b></p>
-<ul>
-<li>优点：降低成本 low cost and save energy。</li>
-<li>缺点：but slower and variable due to the weather 速度慢，且受天气影响而波动。</li>
-</ul>
-<p><b>(5) High frequency drying 高频干燥</b>（在交变磁场上，分子碰撞而产生热量）</p>
-<ul>
-<li>优点：</li>
-</ul>
-<ol>
-<li>干燥速度快，周期短，加热均匀。</li>
-<li>残余应力(residual stress)小，可连续自动化生产。</li>
-</ol>
-<ul>
-<li>缺点：</li>
-</ul>
-<ol>
-<li>设备成本高，以电为能源，运行成本高。</li>
-<li>易产生内裂(internal check)和炭化(char)；适合大断面材。</li>
-</ol>
-<p><b>(6) Microwave drying 微波干燥</b></p>
-<ul>
-<li>优点：干燥周期短，质量好。</li>
-<li>缺点：容量小，设备和管理复杂，能耗高。</li>
-</ul>
-<p><b>(7) Vacuum drying 真空干燥</b></p>
-<ul>
-<li>优点：质量好，速率高；木材可在较低温度下快速干燥。</li>
-<li>缺点：容积小，耗电量大；适合透气性好、易皱缩及厚度较大的木材。</li>
-</ul>
-<p><b>(8) Far-infra-red drying 远红外线干燥</b></p>
-<ul>
-<li>优点：设备简单，干燥基准便于调节。</li>
-<li>缺点：红外穿透力差，只适合干燥薄板或半成品。</li>
-</ul>
-<p><b>(9) Pressure drying 压力干燥（加压干燥）</b></p>
-<ul>
-<li>优点：干燥质量好，周期较短。</li>
-<li>缺点：颜色暗，节子周围有较大裂纹；能耗大，容器容积较小，生产量不大。</li>
-</ul>
-<p><b>(10) Chemical drying 化学干燥（溶剂干燥 Solvent）</b>（词汇表收录，笔记未展开）</p>
-<h4>1.3 Development trend of drying technology 干燥技术发展趋势</h4>
-<ul>
-<li>目标：短周期、低能耗、低污染、低成本、高质量。</li>
-</ul>
-<p>(2) 干燥方法及工艺：</p>
-<ul>
-<li>a. 两段式干燥</li>
-<li>b. 联合式</li>
-<li>c. 新型干燥技术</li>
-<li>总体方向：向绿色化、低碳化转型；余热回收；生物质能源。</li>
-</ul>
-<h4>第1章 词汇表</h4>
-<ol>
-<li>wood / lumber / timber 木材；softwood 针叶材；hardwood 阔叶材</li>
-<li>Wood drying / Seasoning 木材干燥</li>
-<li>gradient 梯度</li>
-<li>Permeability 渗透性</li>
-<li>drying mechanism 干燥机理</li>
-<li>dimensional stability 尺寸稳定性</li>
-<li>decoration（褪色）；decay（腐朽）</li>
-<li>deterioration 老化</li>
-<li>drying methods 干燥方法</li>
-<li>natural drying / natural seasoning 自然干燥</li>
-<li>artificial drying 人工干燥</li>
-<li>drying kiln 干燥窑</li>
-<li>air seasoning / air drying 气干</li>
-<li>forced air drying 强制通风干燥</li>
-<li>kiln drying / seasoning 室干（窑干）</li>
-<li>predrying 预干</li>
-<li>conventional / usual drying 常规干燥</li>
-<li>high temperature drying 高温干燥</li>
-<li>special drying 特种干燥</li>
-<li>dehumidification drying 除湿干燥</li>
-<li>vacuum drying 真空干燥</li>
-<li>solar drying 太阳能干燥</li>
-<li>high frequency drying 高频干燥</li>
-<li>microwave drying 微波干燥</li>
-<li>far-infra-red drying 远红外线干燥</li>
-<li>pressure drying 加压（压力）干燥</li>
-<li>chemical drying (Solvent) 化学干燥（溶剂干燥）</li>
-</ol>
-<hr>
-<h3>第2章 干燥介质 Drying Medium</h3>
-<h4>2.1 干燥介质定义与常用介质<span class="nbadge red">考测</span></h4>
-<ul>
-<li>Definition：干燥介质是在干燥过程中将能量传给木材，同时把木材排出的水蒸气带走的媒介。</li>
-<li>Usual wood drying medium 常用干燥介质（3种）：</li>
-</ul>
-<ol>
-<li>Superheated steam 过热水蒸汽</li>
-<li>moist air 湿空气</li>
-<li>furnace air 炉气</li>
-</ol>
-<h4>2.2 水蒸气状态与湿空气</h4>
-<p><b>饱和状态 Saturated status：</b> 液面上蒸汽空间中的蒸汽与液体两相达到汽液动态平衡(dynamic balance)的状态。</p>
-<ul>
-<li>湿饱和蒸汽 wet saturated vapor：含有悬浮沸腾水滴的蒸汽。</li>
-<li>(干)饱和蒸汽 (dry) saturated vapor：不含水滴的饱和蒸汽。</li>
-<li>湿饱和蒸汽的干度 x = mv / (mv + mw)（mv 饱和蒸汽质量，mw 水的质量）。</li>
-<li>不饱和过热蒸汽 unsaturated superheated steam：对饱和蒸汽继续加热，温度高于相同压力下饱和温度的蒸汽。</li>
-<li>过热度 degree of superheat：过热蒸汽温度与相同压力下饱和蒸汽温度之差 t − ts。</li>
-</ul>
-<p><b>2.2.1 Moist air 湿空气</b></p>
-<ul>
-<li>dry air 干空气：完全不含水蒸气的空气；moist air 湿空气：含有水蒸气的空气。</li>
-<li>理想气体：PV = RT；Pv = m·Rv·T。</li>
-<li>(1) 绝对湿度 absolute humidity：1 m³ 湿空气中所含水蒸气的质量。</li>
-<li>(2) 相对湿度 relative humidity【测】：φ = Pv / Ps；可由干湿球温度计测定；φ↓ → 物料蒸发↓。</li>
-<li>φ = 1 饱和湿空气；φ &lt; 1 未饱和湿空气；φ = 0 干空气（干粉、吸水除外）。</li>
-<li>(3) 湿容量 Wet capacity：饱和湿空气的绝对湿度，达到最大值 max；ρs = Ps / (Rv·T)；表示湿空气容纳水蒸气的能力，T↑ 则湿容量↑。</li>
-</ul>
-<p><b>第2章词汇：</b></p>
-<ol>
-<li>drying medium 干燥介质</li>
-<li>superheated steam 过热水蒸汽</li>
-<li>moist air 湿空气</li>
-<li>furnace air 炉气</li>
-<li>unsaturated water 未饱和水</li>
-<li>saturated water 饱和水</li>
-<li>wet saturated vapor 湿饱和蒸汽</li>
-<li>(dry) saturated vapor 饱和蒸汽</li>
-<li>superheated steam 过热蒸汽</li>
-<li>moist / dry air 湿 / 干空气</li>
-<li>degree of dry / super dryness 干度</li>
-<li>superheat degree 过热度</li>
-</ol>
-<hr>
-<h3>第3章 木材水分与木材性质</h3>
-<h4>3.1 Water in wood 木材中的水分</h4>
-<p>(1) 水分的由来：生材含水率高，which is over 50%（超过 50%）。</p>
-<h5>3.1.2 含水率表示方法</h5>
-<ul>
-<li>绝对含水率 Absolute MC：</li>
-</ul>
-<p>MC = (G湿 − G干) / G干 × 100%</p>
-<ul>
-<li>相对含水率 Relative MC：</li>
-</ul>
-<p>MC₀ = (G湿 − G干) / G湿 × 100%</p>
-<p><b>含水率测量方法（常用称重法 / 烘干法，前后称重）：</b></p>
-<ul>
-<li>电测法：直流电阻式；交流电容式含水率测试仪。</li>
-<li>蒸馏法。</li>
-<li>CT 扫描。</li>
-</ul>
-<p>(1) 烘干法：处理好的木材放入 103±2℃ 烘箱内 6h；每隔 2h 记录一次，当前后两次质量相差不超过 0.02g 时即为绝干。</p>
-<p>(2) 电测法：FSP 纤维饱和点，约 30% 左右；电化学性能随含水率升高而上升。</p>
-<h5>3.1.3 Grading of wood dry and wet degree 木材干湿程度分级</h5>
-<ul>
-<li>湿材 wet / moist wood：长期浸泡在水中。</li>
-<li>气干材 air dried wood。</li>
-<li>生材 green wood：新采伐的木材（笔记记 MC≈12%【待核：生材实际含水率通常更高】）。</li>
-<li>半干材 half dried wood：气干 &lt; MC &lt; 生材。</li>
-<li>窑干材 kiln dried wood：MC 为 7%~15%。</li>
-<li>全干材 oven dried wood：MC 为 0。</li>
-</ul>
-<h4>3.2 Relationship between wood and water 木材与水的关系</h4>
-<p>(1) Classification of wood capillary 木材毛细管分类</p>
-<ul>
-<li>① 大毛细管系统（big）：由互相连通的细胞腔(cell lumen)构成；只能向空气中释放水分，而不能吸收水分——其中的水为<b>自由水</b>。</li>
-<li>② 微毛细管系统（micro capillary system）：由互相连通的细胞壁(cell wall)内的各级微毛细管组成；既能向空气中蒸发水分，也能吸收水分——其中的水为<b>吸着水</b>；另有少量化合水。</li>
-</ul>
-<p>(3) FSP 纤维饱和点：Free water should be completely gone（自由水完全排出）；此时在体积上，当细胞壁(cell wall)的吸着水减少时才开始发生收缩 / 平衡。</p>
-<p>(4) Wood absorption and desorption 木材的吸湿性</p>
-<ul>
-<li>① 吸湿 absorption：当木材低于 FSP 时，微毛细管系统向空气吸收水分。</li>
-<li>② 解吸 desorption：当木材高于 FSP 时，系统向空气排出水分。</li>
-<li>吸湿滞后 sorption hysteresis。</li>
-</ul>
-<p>(5) 平衡含水率 Equilibrium Moisture Content, EMC：木材在吸湿或解吸过程中达到与周围空气相平衡时的含水率。</p>
-<ul>
-<li>笔记记 EMC≈25%；MC &lt; EMC。</li>
-<li>地区原则：以国家（全国标准）为主，地区 EMC 为辅，偏差 ±1<span class="nbadge amber">待核</span>。</li>
-</ul>
-<h4>3.3.1 Wood shrinkage and swelling 木材干缩与湿胀</h4>
-<ul>
-<li>干缩 shrinkage：尺寸减小；湿胀 swelling：尺寸增大。</li>
-<li>干缩率(%) = [原尺寸(体积) − 干燥后尺寸(体积)] / 原尺寸(体积) × 100%</li>
-<li>Yw = (L₁ − Lm) / L₁ × 100%；Lm 为木材干燥至含水率 m% 后的尺寸(mm)。</li>
-<li>在纤维饱和点以下，含水率每减少 1% 所引起的木材干缩率称为干缩系数。</li>
-<li>K（干缩系数）= Yw / (MC₁ − MCm)，其中 MC₁ 为初始含水率，MCm 为干燥后含水率。</li>
-</ul>
-<h4>3.4 木材的电学性质（离子的移动）</h4>
-<ul>
-<li>电导 K；电阻率 (Ω·m)；介电常数 ε；电阻性能随含水率升高而上升。</li>
-<li>影响导电的因素：①温度↑ 导电↑；②含水率↑ 导电↑；③密度↑ 导电↑；④水溶液电解质；⑤纹理方向。</li>
-<li>规律：湿材 &gt; 干材；顺纹 &gt; 横纹。</li>
-<li>应用：木材折数板（电测）在木材工业中的应用<span class="nbadge red">考</span>。</li>
-</ul>
-<h4>3.5 木材的热学性质（笔记仅列标题）</h4>
-<h4>3.6 Wood structure characteristics 木材构造特征</h4>
-<p>(1) 树种 Species。</p>
-<ul>
-<li>是否开裂变形的相关因素：</li>
-<li>a. 各向异性 anisotropy（通道方向）；干缩率：弦向 &gt; 径向（射线方向）。</li>
-<li>压应力：侧旁开裂；拉应力：干燥（塌陷）；早晚材、心边材差异。</li>
-</ul>
-<h4>第3章 词汇（照片仅露出部分，<span class="nbadge amber">不全</span>）</h4>
-<ul>
-<li>绝对含水率 absolute moisture content【注：笔记中英文对应疑似写反，待核】</li>
-<li>相对含水率 relative moisture content</li>
-<li>湿材 wet / moist wood</li>
-<li>生材 green wood / timber</li>
-<li>半干材 half dried wood</li>
-<li>气干材 air dried wood</li>
-</ul>
-<hr>
-<h3>第4章 木材干燥的物理基础</h3>
-<h4>4.1 热转移的基本规律</h4>
-<p>三种基本传热方式：</p>
-<ul>
-<li>热传导 thermal conduction</li>
-<li>热对流 thermal convection</li>
-<li>热辐射 thermal radiation</li>
-</ul>
-<p>导热系数规律：固 &gt; 液 &gt; 气；金属 &gt; 非金属；保温材料约 0.012。</p>
-<h5>4.1.1 Thermal conduction 热传导</h5>
-<ul>
-<li>Quantity of heat 热量：Q = A·λ·ΔT/δ = A·λ·(t₁−t₂)/δ (W)</li>
-<li>Heat flow density 热流密度。</li>
-<li>规律：加热介质温度与木材芯部温度差越大、木材厚度越小，传热越快。</li>
-<li>The heat flow direction is opposite to that of temperature gradient 热流方向与温度梯度方向相反。</li>
-</ul>
-<h5>4.1.2 Thermal convection 热对流</h5>
-<ul>
-<li>流体(fluid)的宏观运动导致不同温度的流体发生相对位移，冷热流体相互掺混而引起的热量传递现象。</li>
-<li>对流换热 Convective heat transfer：流体(干燥介质)与相互接触的固体表面(木材、干燥室壁面)之间的热量传递现象，是导热和热对流两种基本传热方式共同作用的结果。</li>
-</ul>
-<h5>4.1.3 Thermal radiation 热辐射</h5>
-<ul>
-<li>① q = εσT⁴ (W/m²)</li>
-<li>② 两黑体间辐射：q = εσ(T₁⁴ − T₂⁴) (W/m²)</li>
-<li>σ 斯忒藩-玻尔兹曼常数 = 5.67×10⁻⁸。</li>
-</ul>
-<h4>4.2 质转移的基本规律</h4>
-<h5>4.2.1 木材渗透性 permeability</h5>
-<ul>
-<li>必要条件 requirements：porosity（孔隙率）is greater than zero and pores are interconnected（孔隙率大于零且孔隙相互连通）。</li>
-</ul>
-<h5>4.2.2 Wood permeability model 木材渗透模型</h5>
-<ul>
-<li>a. 简单的平行毛细管模型 Simple parallel capillary model：木材纵向结构近似为相互平行、均布的圆形毛细管。</li>
-<li>适于阔叶散孔材 diffuse-porous wood 中畅通的导管 vessel。</li>
-</ul>
-<h4>4.3 Water movement and evaporation 水分移动与蒸发</h4>
-<p>(1) FSP 以上（自由水移动）【笔记未展开，不全】。</p>
-<p>b. MC &lt; FSP：木材细胞壁横断面上含水率梯度或水蒸气分压梯度形成，吸着水在梯度下穿过连续的细胞壁(b₁)，并间歇穿过横穿壁(b₂)和纹孔膜(pit membrane)，即 b₂-a-b₂ 路径，作扩散(diffusion)移动。</p>
-<p>（投影图2：木材横断面上水分移动的路径）</p>
-<p>(2) 表面蒸发的 Requirement 条件：只有当水面或湿物体表面上的空气未被水蒸气饱和时，即相对湿度 φ &lt; 100%（Saturation is smaller than 100%），蒸发才能发生。</p>
-<ul>
-<li>两个部分：水分由木材表面进入处于层流（笔记写"湍流"<span class="nbadge amber">待核</span>）状态的边界层，再从边界层进入处于紊流状态的空气中。</li>
-<li>【考点标注：P87】</li>
-</ul>
-<h4>4.4 Wood conventional drying process 木材常规干燥过程</h4>
-<p>(2) MC &lt; FSP 阶段：The MC gradient of the section decreases, and the drying rate becomes slower and goes to zero when it reaches EMC.（断面含水率梯度减小，干燥速度变慢，达到 EMC 时趋于零。）</p>
-<ul>
-<li>(a) MC distribution curve 含水率分布曲线；(b) Drying curve 干燥曲线。</li>
-<li>图中标注：Wi 初始含水率、Wc、Wf、We（平衡含水率）、fsp、t=tc、k（干燥曲线）、温度曲线。</li>
-</ul>
-<h4>(3) Factors affecting wood drying rate 影响干燥速度的因子</h4>
-<p><b>内因 Internal cause：</b></p>
-<ol>
-<li>木材树种 species 及构造特征。</li>
-<li>木材厚度 Thickness。</li>
-<li>木材含水率 MC。</li>
-<li>木材心边材 Heart and sapwood。</li>
-<li>木材纹理方向 Texture direction。</li>
-</ol>
-<p><b>外因 External cause：</b></p>
-<ol>
-<li>温度 Temperature。</li>
-<li>湿度 Humidity。</li>
-<li>气流循环速度 Air circulation speed。</li>
-</ol>
-<p>（干缩比例笔记记：10:1 ≈ 4:0.5；方向：弦 : 径 : 纵<span class="nbadge amber">待核</span>）</p>
-<h4>4.5 Wood drying stress and deformation 木材干燥应力与变形</h4>
-<ul>
-<li>应变 deformation；各向异性 anisotropy。</li>
-<li>Reasons for drying defects 干燥缺陷的原因：</li>
-</ul>
-<ol>
-<li>growth stress 生长应力。</li>
-<li>drying stress 干燥应力。</li>
-</ol>
-<h5>4.5.1 Uneven moisture content of wood thickness 木材厚度方向含水率不均（even 均匀）</h5>
-<ul>
-<li>① 初始阶段 Initial drying stage。</li>
-<li>【重点标注：木材干燥应力应变产生的机理，P90，重点】</li>
-</ul>
-<hr>
-<h3>附：补充综合术语表（中英对照）</h3>
-<ul>
-<li>Secondary wall 次生壁；microfibril 微纤丝</li>
-<li>纹孔 pit；侵填体 tylose</li>
-<li>自由水 free water；吸着水 absorbed water / bound water；结合水 combined water</li>
-<li>纤维饱和点 fiber saturated point (FSP)</li>
-<li>吸湿稳定含水率 adsorption stabilizing MC；解吸稳定含水率 desorption stabilizing MC</li>
-<li>平衡含水率 equilibrium moisture content (EMC)</li>
-<li>初始含水率 initial moisture content；终含水率 final moisture content；平均含水率 average moisture content</li>
-<li>吸湿 adsorption；解吸 desorption；吸湿滞后 sorption hysteresis</li>
-<li>干缩 shrinkage；湿胀 swelling；干缩系数 shrinkage coefficient</li>
-<li>各向异性 anisotropy；径向 radial；弦向 tangential</li>
-<li>热学性质 thermal property；介电性质 dielectric property</li>
-<li>早材 earlywood；晚材 latewood</li>
-</ul>
-<hr>
-<h3>附：考点 / 重点提示（按笔记红笔标注）</h3>
-<ul>
-<li><span class="nbadge red">红星·考</span>1.1.3 Reasons for wood drying 木材干燥的原因/目的（4条）。</li>
-<li><span class="nbadge red">考测</span>2.1 三种常用干燥介质：过热水蒸汽、湿空气、炉气；干燥介质定义。</li>
-<li>P87 考：4.3 表面蒸发条件 / 水分移动路径。</li>
-<li>P90 重点：木材干燥应力应变产生的机理（4.5）。</li>
-</ul>
-</div>
-</div>
-</section>
-
-<!-- =================== 笔记纠错 =================== -->
-<section id="view-fix" hidden>
-<div class="sec">
-<h2>课堂笔记「待核」逐条核实结论 <span class="en">Note corrections</span></h2>
-<table>
-<tr><th>课堂笔记原文</th><th>核实结论（按教材第3版）</th></tr>
-<tr><td>「生材 green wood 新采伐木材，笔记记 MC≈12%【待核】」</td><td><b class="star">✗</b> 生材含水率随树种差异极大（东北五树种约 70%～200%）；12% 是气干材量级，应更正。</td></tr>
-<tr><td>「窑干材 kiln dried wood MC 为 7%~15%」</td><td>✔ 基本正确（教材：约 7%~15%）；气干材 8%~18%。</td></tr>
-<tr><td>「笔记记 EMC≈25%；MC &lt; EMC」</td><td><b class="star">✗ 混淆</b>。应为：锯材吸湿滞后 <b>Md − Ma ≈ 2.5%</b>（1%~15%）；EMC 需查温湿度表（全国 9/11/13/15% 带），不存在 ≈25% 的通用值。</td></tr>
-<tr><td>「电测法：电化学性能随含水率升高而上升；电阻性能随含水率升高而上升」</td><td><b class="star">✗ 方向易误</b>。正确：木材<b>电导率</b>随含水率增加而<b>急剧升高</b>；<b>电阻率（电阻值）随含水率升高而减小</b>。</td></tr>
-<tr><td>「水分由表面进入层流状态的边界层，再进入紊流气流」</td><td>表述可用：表面存在一层<b>被水汽饱和的薄空气层（边界层）</b>，边界层越薄蒸发越快；气流速度越大边界层越薄。术语按教材为"饱和薄层/边界层"，课堂给出的层流→紊流描述可保留。</td></tr>
-<tr><td>「干缩比例 10:1 ≈ 4:0.5；弦:径:纵【待核】」</td><td>更直观记法：弦约占 <b>8%~12%</b>，径约 4%~5%，纵 0.1%~0.3%；<b>弦向≈径向的 2 倍</b>，纵向常忽略。</td></tr>
-<tr><td>「FSP 约 30% 左右」</td><td>✔ 平均 30%，变异 23%~33%；随温度升高降低（60℃→26%，120℃→18%）。</td></tr>
-<tr><td>「烘工法：103±2℃ 烘 6 h；每隔 2 h；差 ≤0.02 g」</td><td>与教材口径（恒重＝连续两次称重相等或相差极小）一致；"6 h/2 h/0.02 g"为课堂细化口径，考试两者都写更稳。</td></tr>
-<tr><td>「吸湿滞后原因」</td><td>✔ ①微毛细管空隙被空气占据 ②羟基间形成氢键（教材补充：数值与树种无关、随尺寸增大、随干燥温度升高加大）。</td></tr>
-<tr><td>「干湿程度分级表」</td><td>✔ 六级正确（湿材/生材/半干材/气干材/室干材/全干材）。</td></tr>
-</table>
-<div class="note"><b>期中卷判断题 5 的作答依据</b>：切片法判定「切开后（及叉齿）外弯＝表层拉应力（负），内弯＝表内层压应力」。题目描述"锯开时向外弯曲（外张）→ 表层受拉、芯层受压"，结论：<b>该判断为「对」</b>。</div>
+<h2>🙏 鸣谢 <span class="en">Acknowledgements</span></h2>
+<p><b>课堂笔记整理：唐婧</b><br>本页各章「📓 课堂笔记补充」内容来自唐婧同学整理的课堂笔记（手写笔记＋课堂投影照片转录，中英对照），经本人同意收录；笔记原稿中的存疑处已按教材更正。</p>
+<p><b>教材依据</b>：王喜明 主编《木材干燥学》（第3版）——本站知识点、数值与公式<b>一切以教材为准</b>。</p>
+<p><b>课程课件</b>：任课教师课程课件（绪论部分）。</p>
+<p><b>试题来源</b>：课程期中测试试卷（课堂投影照片转录）。</p>
+<p class="note">说明：笔记、课件与真题内容仅作复习辅助；如与教材不一致，以教材为准。</p>
 </div>
 </section>
 
@@ -1110,7 +760,7 @@ var BANK = [
 {t:'es', ch:'绪论', tag:['midterm'], q:'What is the purpose of wood drying?（木材干燥的目的）', ans:'要点 5 条：①预防木材腐朽变质和虫害（降到 20% 以下）；②防止木材变形开裂（干到与使用环境相适应的终含水率）；③提高力学强度、改善物理性能（FSP 以下强度随含水率降低而升高，改善加工胶合涂饰）；④改善木材的环境学特性；⑤减轻质量 30%~50%，节省运输费用。（课件 4 条口径：提高力学/胶合强度与装饰质量、提高形状与尺寸稳定性、防腐朽劣变、减重——两套体系任一作答均可。）'},
 {t:'es', ch:'第2章', tag:['midterm'], q:'How to determine the final moisture content of dried wood?（如何确定干燥后木材的最终含水率？）', ans:'要点：①终含水率必须与制品<b>使用地点/使用环境</b>的平衡含水率相适应：Me − 2.5% ≤ M终 &lt; Me，生产上常取比使用地区 EMC 低 2%~3%（室内使用可更低）；②我国 EMC 以气候资料查表确定（以国家标准为主、地区为辅），自西北向东南分 9%、11%、13%、15% 四带，对应终含水率 7%、9%、11%、13%；③北方室内用材约 8%~9%；干旱地区 7%~9%，沿海 12%~13%；④参考用途要求表与附录 160 城市气象值。'},
 {t:'es', ch:'第3章', tag:['midterm'], q:'Draw the moisture content distribution curve in the direction of wood thickness and drying curve.（画出沿木材厚度方向的含水率分布曲线和干燥曲线）', ans:'答题提示（画图稿要点）：①坐标图"含水率—时间 τ"：预热段含水率几乎不变（干燥速度＝0）→ 干燥段平均含水率曲线从高速渐渐减慢 → 接近 Me 趋于水平（画中含 Mi、Mk、Me 标注）；②含水率分布曲线（沿厚度）：开始是一条平整（表层低内层高、FSP 处平齐）→ 进行中弯成"小山包"状波形下移→接近 Me 趋于水平；③同时画温度曲线：预热段陡升到冷却极限温度（≈湿球温度）→ 等速段不变 → 减速段渐升至介质温度。此满分解题中还包括速度曲线（导数）供参考判段。'},
-{t:'es', ch:'第3章', tag:['midterm'], q:'How to increase the drying speed of softwood?（如何提高针叶材的干燥速度？）', ans:'重点答"外因三招"：①提高干燥介质温度（可升温至高温室干级别，使湿容量增大、干燥势大）；②降低相对湿度（增大干湿球温差，增大汽分压差/蒸发态势）；③加大气流循环速度（减薄表面饱和空气层，≥1 m/s，高含水期 3~5 m/s；后期辅以降低气流速度省电）。补充（内因）：合理装堆（隔条设置增加通道、坏木处理）、低含水率阶段降温又增速度快；针叶材应采用高温或连续升温干燥基准等。'},
+{t:'es', ch:'第3章', tag:['midterm'], q:'How to increase the drying speed of softwood?（如何提高针叶材的干燥速度？）', ans:'要点（三方面入手）：①提高干燥介质温度（可升温至高温室干级别，使湿容量增大、蒸发势大）；②降低相对湿度（增大干湿球温差，增大水汽分压差）；③加大气流循环速度（减小表面饱和空气层厚度，≥1 m/s，高含水期 3~5 m/s；后期辅以降低气流速度省电）。补充：合理装堆（隔条设置增加通道）、针叶材可采用高温或连续升温干燥基准等。'},
 {t:'es', ch:'第3章', tag:[], q:'简述木材干燥过程中应力与变形的四个阶段及表面硬化、中间调湿处理的作用。', ans:'四阶段：Ⅰ 干燥刚开始（无应力，内外层均&gt;FSP）；Ⅱ 干燥初期（表面先干缩：外拉内压，剖开时外侧弯，水分均匀后因表层塑性变定而内弯；易<b>表裂</b>）；Ⅲ 干燥中期（内层降到 FSP，应力<b>暂时平衡</b>，均匀后内弯加剧）；Ⅳ 干燥末期（表层早已塑性变定不再干缩：内拉表层压，易<b>内裂（蜂窝裂）</b>，均匀后两片更向内弯）。<b>全应力＝含水率应力＋残余应力</b>；干燥结束影响质量的是残余应力。中间调湿处理（喷低压饱和蒸汽/雾化水）：使表层吸湿软化恢复可塑性，补充干缩，防止后期内裂；硬阔叶厚材应提早多次进行。'},
 {t:'es', ch:'第7章', tag:[], q:'简述干燥基准的含义、种类及波动式基准的特性和注意事项。', ans:'基准＝按时间或木材状态（含水率、应力）变化编制的介质温湿度变化程序表。种类：①时间干燥基准（按时间分段）；②含水率干燥基准（按含水率阶段，如 35→30%）；③双阶段/三阶段基准（多为高温／急干用）；④波动式基准（温度周期性升→降→恒温循环，维持内高外低的温度梯度，加快干燥：干燥<b>前期</b>波动必须保证一定的相对湿度否则<b>易开裂</b>；前期效果明显、后期不明显；生产上常用<b>半波动</b>＝前期常规+后期波动）；⑤连续升温基准（干球等速升温，不进行中间处理，适针叶材）。'},
 {t:'es', ch:'第7章', tag:[], q:'简述预热处理、中间调湿处理与终了调湿处理的作用。', ans:'①<b>表面预热/初处理</b>：窑内先在高温（饱和蒸汽）、高湿介质中热透木材，消除表面到内层的温度梯度，木料内外同步热，配合初期干燥防表裂，并改善均匀性；②<b>中间调湿处理</b>：按应力阶段使用喷蒸/喷水提高湿度、维持温度，使已硬化的表层软化（吸湿可塑），回到可继续干缩状态——增加防表/内裂，对硬阔叶材厚材应多次、提早；③<b>终了调湿处理（终处理）</b>：干燥末期以比干燥基准较高的相对湿度处理若干小时，使表面含水率恢复、消除残余干燥应力（表面硬化），提升干燥均匀度与质量等级。'},
@@ -1145,7 +795,7 @@ var BANK = [
 
 /* ================= 渲染 ================= */
 var $=function(s){return document.querySelector(s)};
-var views=['review','notes','quiz','fix'];
+var views=['review','quiz','thanks'];
 function showView(name){
   views.forEach(function(v){
     var el=$('#view-'+v); if(!el) return;
