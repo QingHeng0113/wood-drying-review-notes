@@ -1051,13 +1051,10 @@ function norm2(s){
 function matchOne(user,list){
   var u=norm(user); if(!u) return false;
   for(var i=0;i<list.length;i++){
-    if(list[i].length<1) return false;
-  }
-  for(var i=0;i<list.length;i++){
     var v=norm(list[i]);
     if(v===u) return true;
-    if(u.length>=2 && (v.indexOf(u)>-1 && u.length>=Math.ceil(v.length*0.7))) return true;
-    if(v.length>=2 && u.indexOf(v)>-1 && v.length>=Math.ceil(u.length*0.7)) return true;
+    if(u.length>=2 && v.indexOf(u)>-1 && u.length>=Math.ceil(v.length*0.7)) return true;
+    if(v.length>=2 && u.indexOf(v)>-1) return true;   /* 允许“自由水（free water）”等中英混写作答 */
   }
   return false;
 }
@@ -1177,7 +1174,7 @@ function renderCard(q,idx){
       if(!inputs[0].value && !vals.join('')){ return; }
       prog.obj[k]=allOk;
       di.style.display='block';
-      di.innerHTML=(allOk?'<b>✔ 全部正确！</b> ':'<b>✗ 有空未对（红色框），可对照下方解析修改后重新校验</b> ')+q.exp;
+      di.innerHTML=(allOk?'<b>✔ 全部正确！</b> ':'<b>✗ 有空未对（红色框），可对照下方解析修改后重新校验</b> ')+'<b>参考答案：</b>'+refText(q)+'。<br>'+q.exp;
       div.classList.add(allOk?'right':'wrong');
       save(); refreshScore();
     }
@@ -1186,7 +1183,7 @@ function renderCard(q,idx){
       var inputs=div.querySelectorAll('.slotrow input');
       q.slots.forEach(function(s,si){ inputs[si].value=s[0]; inputs[si].style.borderColor='var(--amber)'; });
       di.style.display='block';
-      di.innerHTML='<b>参考答案（闪金色为标准填法）</b> '+q.exp;
+      di.innerHTML='<b>参考答案：</b>'+refText(q)+'。<br>'+q.exp;
     });
   } else { /* nm / es */
     var st=prog.mem['q'+k];
@@ -1336,17 +1333,24 @@ function findQ(sub){
 }
 function examGroups(){ return EXAM_PAPERS[examPaper].groups; }
 var EXAM_REF={
-  '写出木材的三种水分': '自由水 free water；吸着水 absorbed water（bound water）；化合水 combined water',
-  '写出三种干燥介质': '过热水蒸气 superheated steam；湿空气 moist air；炉气 furnace air',
-  '写出四个特种干燥方法': '除湿干燥 dehumidification drying；真空干燥 vacuum drying；高频干燥 high-frequency drying；微波干燥 microwave drying（任选 4 个；也可写太阳能/远红外/加压/溶剂）',
-  '写出三种基本传热方式': '热传导 thermal conduction；热对流 thermal convection；热辐射 thermal radiation'
+  '写出木材的三种水分': '自由水（free water）；吸着水（absorbed water / bound water）；化合水（combined water）',
+  '写出三种干燥介质': '过热水蒸气（superheated steam）；湿空气（moist air）；炉气（furnace air）',
+  '写出四个特种干燥方法': '除湿干燥（dehumidification drying）；真空干燥（vacuum drying）；高频干燥（high-frequency drying）；微波干燥（microwave drying）——任选 4 个，也可写太阳能/远红外/加压/溶剂',
+  '写出三种基本传热方式': '热传导（thermal conduction）；热对流（thermal convection）；热辐射（thermal radiation）',
+  '直流电阻式测湿仪': '6%；温度（temperature）',
+  '干燥基准按控制因素分': '时间（time）',
+  '干燥梯度＝木材平均含水率': '平衡（equilibrium）'
 };
-function examAnswerText(q){
+function refText(q){
   if(q.t==='bl'){
     var k='';
     for(var r in EXAM_REF){ if(q.q.indexOf(r)===0){ k=r; break; } }
-    return '参考答案：' + (k ? EXAM_REF[k] : q.slots.map(function(s){ return s[0]; }).join('；')) + '。';
+    return k ? EXAM_REF[k] : q.slots.map(function(s){ return s[0]; }).join('；');
   }
+  return '';
+}
+function examAnswerText(q){
+  if(q.t==='bl'){ return '参考答案：' + refText(q) + '。'; }
   if(q.t==='mc'){ return '正确答案：' + String.fromCharCode(65+q.ans) + '. ' + q.opts[q.ans]; }
   if(q.t==='tf'){ return '正确答案：' + (q.ans ? '对' : '错'); }
   return '';
