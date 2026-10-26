@@ -756,10 +756,10 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <div class="examhead">
   <span>⏱ <b id="exam-timer">90:00</b></span>
   <select id="exam-paper" title="选择试卷">
-    <option>试卷一 · 基础卷（期中口径）</option>
-    <option>试卷二 · 综合卷（第1–4章）</option>
-    <option>试卷三 · 设备与工艺卷（第5–6章）</option>
-    <option>试卷四 · 易错冲刺卷</option>
+    <option>试卷一 · 期中模拟卷</option>
+    <option>试卷二 · 小测模拟卷</option>
+    <option>试卷三 · 核心概念卷</option>
+    <option>试卷四 · 工艺与设备卷</option>
   </select>
   <button id="exam-submit" class="primary actbtn">交卷</button>
   <button id="exam-reset" class="actbtn">重做本卷</button>
@@ -840,18 +840,18 @@ var BANK = [
   ['自由水','自由水 free water','free water'],
   ['吸着水','吸着水（结合水）','absorbed water','bound water','结合水'],
   ['化合水','化合水 combined water','combined water','compound water','化合水 compound water'],
-], exp:'自由水存在于大毛细管系统（细胞腔与细胞间隙），物理机械结合、易逸出、只能蒸发不能吸收；吸着水存在于微毛细管系统（细胞壁内），物理化学+物理机械结合；化合水为与细胞壁成分化学结合的水。'},
+], exp:'自由水存在于大毛细管系统（细胞腔与细胞间隙），物理机械结合、易逸出、只能蒸发不能吸收；吸着水存在于微毛细管系统（细胞壁内），物理化学＋物理机械结合；化合水为与细胞壁成分化学结合的水。'},
 {t:'bl', ch:'绪论', tag:['midterm'], q:'写出四个特种干燥方法（中英文）：', slots:[
   ['除湿干燥','除湿（热泵）干燥','dehumidification drying','除湿','热泵干燥','真空干燥','vacuum drying','真空','高频干燥','high-frequency drying','高频','微波干燥','microwave drying','微波','太阳能干燥','solar drying','太阳能','热压干燥','hot-press drying','热压','远红外线干燥','far-infra-red drying','远红外','加压干燥','pressure drying','加压','溶剂干燥','solvent drying','溶剂'],
   ['除湿干燥','除湿（热泵）干燥','dehumidification drying','除湿','热泵干燥','真空干燥','vacuum drying','真空','高频干燥','high-frequency drying','高频','微波干燥','microwave drying','微波','太阳能干燥','solar drying','太阳能','热压干燥','hot-press drying','热压','远红外线干燥','far-infra-red drying','远红外','加压干燥','pressure drying','加压','溶剂干燥','solvent drying','溶剂'],
   ['除湿干燥','除湿（热泵）干燥','dehumidification drying','除湿','热泵干燥','真空干燥','vacuum drying','真空','高频干燥','high-frequency drying','高频','微波干燥','microwave drying','微波','太阳能干燥','solar drying','太阳能','热压干燥','hot-press drying','热压','远红外线干燥','far-infra-red drying','远红外','加压干燥','pressure drying','加压','溶剂干燥','solvent drying','溶剂'],
   ['除湿干燥','除湿（热泵）干燥','dehumidification drying','除湿','热泵干燥','真空干燥','vacuum drying','真空','高频干燥','high-frequency drying','高频','微波干燥','microwave drying','微波','太阳能干燥','solar drying','太阳能','热压干燥','hot-press drying','热压','远红外线干燥','far-infra-red drying','远红外','加压干燥','pressure drying','加压','溶剂干燥','solvent drying','溶剂'],
-], exp:'课程参考答案的 8 项：除湿 dehumidification、真空 vacuum、太阳能 solar、高频 high-frequency、微波 microwave、远红外线 far-infra-red、加压 pressure、溶剂 solvent（任选 4 个，中英文各计分）。本题四格按“任意 4 个、顺序不限”判定。'},
+], exp:'任选 4 个即可，中英文各计分；也可写太阳能/远红外/加压/溶剂等。'},
 {t:'bl', ch:'第1章', tag:['midterm'], q:'写出三种干燥介质（中英文）：', slots:[
   ['过热水蒸气','过热蒸汽','superheated steam'],
   ['湿空气','湿空气 moist air','moist air','wet air'],
   ['炉气','炉气 furnace air','furnace air','炉气 furnace gas','furnace gas','flue gas'],
-], exp:'干燥介质：干燥过程中把热量传给木材并带走水汽的媒介物质。只有过热蒸汽能直接作介质（湿/干饱和蒸汽遇冷即凝结，无吸湿能力）。'},
+], exp:'干燥介质＝把热量传给木材、并把木材排出的水汽带走的媒介物质；只有过热蒸汽能直接作介质（饱和蒸汽遇冷即凝结，无吸湿能力）。'},
 
 /* ---- 填空：高频 ---- */
 {t:'bl', ch:'第2章', tag:[], q:'纤维饱和点在空气温度 20℃、φ=100% 时平均值为 ____%，变异范围 23%~33%；且随温度升高而____。', slots:[['30'],['降低','变小','减小','下降']], exp:'FSP：自由水蒸发干净、结合水仍饱和状态的含水率；60℃→26%，120℃→18%。FSP 以下材性（干缩、强度、电导）随含水率变化，是关键临界值。'},
@@ -954,7 +954,7 @@ var BANK = [
   ['热传导','thermal conduction','conduction'],
   ['热对流','thermal convection','convection'],
   ['热辐射','thermal radiation','radiation'],
-], exp:'热传导（导热）、热对流、热辐射；对流换热是流体与固体表面间导热与对流的联合作用；辐射传热贯穿整个干燥过程。'},
+], exp:'对流换热＝流体（干燥介质）与固体表面之间导热与对流的联合作用；辐射传热贯穿整个干燥过程。'},
 {t:'bl', ch:'第3章', tag:[], q:'木材各向异性干缩：纵向 0.1%～0.3% ＜ 径向 4.5%～8% ＜ 弦向 8%～12%，弦:径:纵 ≈ ____:5:1。', slots:[['10']], exp:'弦向干缩系数约为径向的 2 倍；阔叶材干缩＞针叶材，密度高＞密度低；温度越高各向异性越大。'},
 {t:'tf', ch:'第3章', tag:[], q:'气干材的含水率约为 12%。', ans:true, exp:'✔ 对（笔记修正口径：气干材 MC≈12%；此前误记为生材）。气干材含水率范围 8%~18%，典型约 12%；生材为新采伐材，含水率更高。'},
 {t:'tf', ch:'第6章', tag:[], q:'含水率检验板应放在材堆中水分蒸发最慢的位置。', ans:true, exp:'✔ 对（笔记口径）。含水率检验板放蒸发最慢处，作阶段转换与结束依据；应力检验板放蒸发最快处，作调湿处理依据。'},
@@ -1299,33 +1299,33 @@ var FB_ARCH='wd_fb_archive_v1';
 
 /* ================= 模拟考试（多套试卷） ================= */
 var EXAM_PAPERS=[
- {name:'试卷一 · 基础卷（期中口径）', groups:[
+ {name:'试卷一 · 期中模拟卷', groups:[
    {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['写出木材的三种水分（中英文）','写出三种干燥介质（中英文）','写出四个特种干燥方法（中英文）','写出三种基本传热方式']},
    {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['吸湿滞后（adsorption','相对湿度（relative humidity','绝对含水率（absolute','平衡含水率（EMC）']},
    {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['径切板较弦切板干燥慢','木材含水率越低越容易干燥','高温干燥适用于干燥阔叶材','解吸是指木材中自由水和吸着水的排除','若应力试片刚锯开时的形状是两半片向外弯曲']},
    {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['What is the wood drying mechanism?','What is the purpose of wood drying?','How to determine the final moisture content','Draw the moisture content distribution curve','How to increase the drying speed of softwood?']},
    {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某检验板截取后立即称重 3600 g','检验板初重 3600 g、初含水率 60%','水曲柳弦向干缩系数 0.338%']}
  ]},
- {name:'试卷二 · 综合卷（第1–4章）', groups:[
-   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['纤维饱和点在空气温度 20℃','干燥锯材最终含水率应比制品使用地点的平衡含水率低','木材各种方向上的绝干缩率','木材水分传导：顺纤维方向']},
+ {name:'试卷二 · 小测模拟卷', groups:[
+   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['纤维饱和点在空气温度 20℃','锯材吸湿滞后平均值约','干燥锯材最终含水率应比制品使用地点的平衡含水率低','称重法（烘工法）：烘干温度']},
    {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['纤维饱和点 FSP','解吸（desorption）','临界含水率 Mk','干燥基准（drying schedule）']},
-   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['同样温度与压力下，湿空气的密度比干空气小','纤维饱和点随温度升高而降低','干燥进行到木材含水率接近平衡含水率时','干燥室内 25 mm 以上的锯材','木材的电阻率（电阻率）随含水率升高而增大']},
-   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['简述木材干燥过程中应力与变形的四个阶段','简述干燥基准的含义、种类及波动式基准','简述预热处理、中间调湿处理与终了调湿处理的作用','检验板的使用要点','中期（中间）处理的目的、做法与效果判断']},
+   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['同样温度与压力下，湿空气的密度比干空气小','纤维饱和点随温度升高而降低','干燥进行到木材含水率接近平衡含水率时','气干材的含水率约为 12%','针叶材比阔叶材容易干燥']},
+   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['What is the purpose of wood drying?','What is the wood drying mechanism?','How to determine the final moisture content','How to increase the drying speed of softwood?','简述木材干燥过程中应力与变形的四个阶段']},
    {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某试片湿重 150 g','某树种弦向干缩系数 K = 0.30%','某检验板绝干重 1800 g']}
  ]},
- {name:'试卷三 · 设备与工艺卷（第5–6章）', groups:[
-   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['高温干燥的介质温度范围','蒸汽加热干燥室通常采用低压饱和水蒸气','干燥基准按控制因素分','干燥结束冷却卸出']},
-   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['干燥基准（drying schedule）','标准木料','表面硬化（case hardening','过热度（superheat degree']},
+ {name:'试卷三 · 核心概念卷', groups:[
+   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['木材各种方向上的绝干缩率','木材水分传导：顺纤维方向','直流电阻式测湿仪','微波加热对木材规定专用频率']},
+   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['纤维饱和点 FSP','解吸（desorption）','表面硬化（case hardening','标准木料']},
+   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['解吸是指木材中自由水和吸着水的排除','干燥室内 25 mm 以上的锯材','木材的电阻率（电阻率）随含水率升高而增大','常规室干可以把木材干燥到任何要求的终含水率','采用波动式干燥基准时，干燥前期的波动必须保持一定的相对湿度']},
+   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['简述干燥基准的含义、种类及波动式基准','简述预热处理、中间调湿处理与终了调湿处理的作用','隔条（dry finger）的作用','中期（中间）处理的目的、做法与效果判断','检验板的使用要点']},
+   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某检验板截取后立即称重 3600 g','检验板初重 3600 g、初含水率 60%','水曲柳弦向干缩系数 0.338%']}
+ ]},
+ {name:'试卷四 · 工艺与设备卷', groups:[
+   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['高温干燥的介质温度范围','蒸汽加热干燥室通常采用低压饱和水蒸气','强制循环干燥室内过材堆的气流循环速度','干燥结束冷却卸出']},
+   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['干燥基准（drying schedule）','标准木料','表面硬化（case hardening','临界含水率 Mk']},
    {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['终了处理的时间大致按锯材每厚','材堆中各层隔条在高度上','用时间干燥基准操作时','连续式干燥室适用于批量较大','中间处理只会消除应力']},
    {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['隔条（dry finger）的作用','简述常规（周期式强制循环）干燥室各类型','中期（中间）处理的目的、做法与效果判断','检验板的使用要点','简述预热处理、中间调湿处理与终了调湿处理的作用']},
-   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某试片湿重 150 g','某检验板绝干重 1800 g','水曲柳弦向干缩系数 0.338%']}
- ]},
- {name:'试卷四 · 易错冲刺卷', groups:[
-   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['木材各种方向上的绝干缩率','木材水分传导：顺纤维方向','直流电阻式测湿仪','微波加热对木材规定专用频率']},
-   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['吸湿滞后（adsorption','解吸（desorption）','临界含水率 Mk','表面硬化（case hardening']},
-   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['对微波与高频：微波频率高','高温干燥适用于干燥阔叶材','解吸是指木材中自由水和吸着水的排除','木材的电阻率（电阻率）随含水率升高而增大','同样温度与压力下，湿空气的密度比干空气小']},
-   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['Draw the moisture content distribution curve','简述木材干燥过程中应力与变形的四个阶段','How to increase the drying speed of softwood?','How to determine the final moisture content','What is the purpose of wood drying?']},
-   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某试片湿重 150 g','某检验板绝干重 1800 g','水曲柳弦向干缩系数 0.338%']}
+   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某试片湿重 150 g','某树种弦向干缩系数 K = 0.30%','某检验板绝干重 1800 g']}
  ]}
 ];
 var examPaper=0, examState={a:{},self:{}}, examTimer=null, examLeft=90*60, examBuilt=false;
@@ -1335,6 +1335,22 @@ function findQ(sub){
   return null;
 }
 function examGroups(){ return EXAM_PAPERS[examPaper].groups; }
+var EXAM_REF={
+  '写出木材的三种水分': '自由水 free water；吸着水 absorbed water（bound water）；化合水 combined water',
+  '写出三种干燥介质': '过热水蒸气 superheated steam；湿空气 moist air；炉气 furnace air',
+  '写出四个特种干燥方法': '除湿干燥 dehumidification drying；真空干燥 vacuum drying；高频干燥 high-frequency drying；微波干燥 microwave drying（任选 4 个；也可写太阳能/远红外/加压/溶剂）',
+  '写出三种基本传热方式': '热传导 thermal conduction；热对流 thermal convection；热辐射 thermal radiation'
+};
+function examAnswerText(q){
+  if(q.t==='bl'){
+    var k='';
+    for(var r in EXAM_REF){ if(q.q.indexOf(r)===0){ k=r; break; } }
+    return '参考答案：' + (k ? EXAM_REF[k] : q.slots.map(function(s){ return s[0]; }).join('；')) + '。';
+  }
+  if(q.t==='mc'){ return '正确答案：' + String.fromCharCode(65+q.ans) + '. ' + q.opts[q.ans]; }
+  if(q.t==='tf'){ return '正确答案：' + (q.ans ? '对' : '错'); }
+  return '';
+}
 
 function examItem(q, gi, ii){
   var key=gi+'_'+ii;
@@ -1353,7 +1369,10 @@ function examItem(q, gi, ii){
       lb.textContent = en.hidden ? 'English' : '中文';
     });
   }
+  var ansDiv=document.createElement('div'); ansDiv.className='ansbox';
+  function showAns(){ ansDiv.classList.add('show'); }
   if(q.t==='mc'){
+    ansDiv.innerHTML='<b>✅ '+examAnswerText(q)+'</b><br>解析：'+q.exp;
     var box=document.createElement('div'); box.className='opts';
     q.opts.forEach(function(o,j){
       var b=document.createElement('button'); b.textContent=String.fromCharCode(65+j)+'. '+o;
@@ -1363,11 +1382,13 @@ function examItem(q, gi, ii){
         box.querySelectorAll('button').forEach(function(x){x.disabled=true;});
         if(right) b.classList.add('right'); else { b.classList.add('wrong'); box.children[q.ans].classList.add('right'); }
         div.classList.add(right?'right':'wrong');
+        showAns();
       });
       box.appendChild(b);
     });
-    div.appendChild(box);
+    div.appendChild(box); div.appendChild(ansDiv);
   } else if(q.t==='tf'){
+    ansDiv.innerHTML='<b>✅ '+examAnswerText(q)+'</b><br>解析：'+q.exp;
     var row=document.createElement('div'); row.className='tfrow';
     [['对',true],['错',false]].forEach(function(pair){
       var b=document.createElement('button'); b.textContent=pair[0];
@@ -1377,11 +1398,13 @@ function examItem(q, gi, ii){
         row.querySelectorAll('button').forEach(function(x){x.disabled=true;});
         if(right) b.classList.add('right'); else { b.classList.add('wrong'); row.children[q.ans?0:1].classList.add('right'); }
         div.classList.add(right?'right':'wrong');
+        showAns();
       });
       row.appendChild(b);
     });
-    div.appendChild(row);
+    div.appendChild(row); div.appendChild(ansDiv);
   } else if(q.t==='bl'){
+    ansDiv.innerHTML='<b>✅ '+examAnswerText(q)+'</b><br>解析：'+q.exp;
     var wrap=document.createElement('div');
     q.slots.forEach(function(s,si){
       var inp=document.createElement('input'); inp.type='text'; inp.setAttribute('data-s',si);
@@ -1391,7 +1414,6 @@ function examItem(q, gi, ii){
     div.appendChild(wrap);
     var chk=document.createElement('div'); chk.className='qbtns';
     var btn=document.createElement('button'); btn.textContent='✔ 校验';
-    var ansb=document.createElement('div'); ansb.className='ansbox'; ansb.innerHTML='<b>解析：</b>'+q.exp;
     btn.addEventListener('click',function(){
       var inputs=wrap.querySelectorAll('input'); var allOk=true;
       inputs.forEach(function(inp,si){
@@ -1400,14 +1422,22 @@ function examItem(q, gi, ii){
         if(!ok) allOk=false;
       });
       examState.a[key]=allOk;
-      ansb.classList.add('show'); div.classList.add(allOk?'right':'wrong'); btn.disabled=true;
+      div.classList.add(allOk?'right':'wrong'); btn.disabled=true;
+      showAns();
     });
-    chk.appendChild(btn); div.appendChild(chk); div.appendChild(ansb);
+    var sb=document.createElement('button'); sb.textContent='👁 显示答案';
+    sb.addEventListener('click',function(){
+      var inputs=wrap.querySelectorAll('input');
+      q.slots.forEach(function(s,si){ inputs[si].value=s[0]; inputs[si].style.borderColor='var(--amber)'; });
+      div.classList.add('right'); showAns();
+    });
+    chk.appendChild(btn); chk.appendChild(sb);
+    div.appendChild(chk); div.appendChild(ansDiv);
   } else {
-    var ab=document.createElement('div'); ab.className='ansbox'; ab.innerHTML='<b>参考答案：</b>'+q.ans;
+    ansDiv.innerHTML='<b>✅ 参考答案：</b>'+q.ans;
     var show=document.createElement('div'); show.className='qbtns';
     var sb=document.createElement('button'); sb.textContent='👁 查看答案';
-    sb.addEventListener('click',function(){ ab.classList.toggle('show'); });
+    sb.addEventListener('click',function(){ ansDiv.classList.toggle('show'); });
     show.appendChild(sb);
     var selfDiv=document.createElement('div'); selfDiv.className='qbtns';
     [['mem','✅ 会（满分）'],['vague','🤔 模糊（半分）'],['lost','❌ 不会（0 分）']].forEach(function(pair){
@@ -1419,7 +1449,7 @@ function examItem(q, gi, ii){
       });
       selfDiv.appendChild(b);
     });
-    div.appendChild(ab); div.appendChild(show); div.appendChild(selfDiv);
+    div.appendChild(show); div.appendChild(selfDiv); div.appendChild(ansDiv);
   }
   return div;
 }
