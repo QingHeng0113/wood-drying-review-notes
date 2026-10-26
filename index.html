@@ -753,7 +753,17 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <div class="sec">
 <h2>📝 模拟考试 <span class="en">Mock exam</span></h2>
 <div class="note">按考试题型组卷：填空 · 名词解释 · 判断 · 简答 · 计算（计算二选一）。满分 100 分，建议 90 分钟。客观题自动判分；名词解释/简答/计算请对照参考答案自评（会＝满分、模糊＝半分、不会＝0 分）。</div>
-<div class="examhead"><span>⏱ <b id="exam-timer">90:00</b></span><button id="exam-submit" class="primary actbtn">交卷</button><button id="exam-reset" class="actbtn">重做</button></div>
+<div class="examhead">
+  <span>⏱ <b id="exam-timer">90:00</b></span>
+  <select id="exam-paper" title="选择试卷">
+    <option>试卷一 · 基础卷（期中口径）</option>
+    <option>试卷二 · 综合卷（第1–4章）</option>
+    <option>试卷三 · 设备与工艺卷（第5–6章）</option>
+    <option>试卷四 · 易错冲刺卷</option>
+  </select>
+  <button id="exam-submit" class="primary actbtn">交卷</button>
+  <button id="exam-reset" class="actbtn">重做本卷</button>
+</div>
 <div id="exam-result" class="note" style="display:none"></div>
 <div id="exam-body"></div>
 </div>
@@ -955,7 +965,12 @@ var BANK = [
 {t:'mc', ch:'第6章', tag:[], q:'锯材厚度小于 30 mm 时，干燥基准宜选：', opts:['强烈基准','适中基准','温和基准','任意基准均可'], ans:0, exp:'笔记口径：厚度>60 mm 选温和 mild；30～60 mm 选适中 moderate；<30 mm 选强烈 strong。'},
 {t:'mc', ch:'第6章', tag:[], q:'百度试验法的试验温度为：', opts:['100℃','60℃','80℃','120℃'], ans:0, exp:'百度试验法：100℃ 恒温烘干标准试件，评端裂/表裂/内裂/截面变形等级，据此确定初期温度、干湿球温差与后期最高温度，并得干燥时间指标。'},
 {t:'nm', ch:'第2章', tag:[], en:'dryness', q:'干度（dryness）', ans:'1 kg 湿饱和蒸汽中所含干蒸汽的相对质量（质量分数），x = m_v/(m_v+m_w)（m_v 为饱和蒸汽质量、m_w 为水的质量）。饱和水的干度为 0，干饱和蒸汽的干度为 1，湿饱和蒸汽的干度介于 0～1 之间。'},
-{t:'nm', ch:'第2章', tag:[], en:'superheat degree', q:'过热度（superheat degree）', ans:'过热蒸汽温度与相同压力下饱和蒸汽温度之差（t − t_s），其大小说明蒸汽过热的程度；过热蒸汽是未饱和蒸汽，具有吸湿能力，可作干燥介质。'}
+{t:'nm', ch:'第2章', tag:[], en:'superheat degree', q:'过热度（superheat degree）', ans:'过热蒸汽温度与相同压力下饱和蒸汽温度之差（t − t_s），其大小说明蒸汽过热的程度；过热蒸汽是未饱和蒸汽，具有吸湿能力，可作干燥介质。'},
+
+/* ---- 计算题补充（供多套试卷使用） ---- */
+{t:'bl', ch:'第2章', tag:[], q:'某试片湿重 150 g，烘干后绝干重 120 g，其绝对含水率为 ____%。', slots:[['25']], exp:'M = (G湿 − G干)/G干 × 100% = (150 − 120)/120 × 100% = 25%。'},
+{t:'bl', ch:'第3章', tag:[], q:'某树种弦向干缩系数 K = 0.30%/1%含水率，含水率由 30% 降到 10%，弦向干缩率 = ____%。', slots:[['6','6.0']], exp:'Y = K(30 − M) = 0.30% × (30 − 10) = 6.0%。'},
+{t:'bl', ch:'第6章', tag:[], q:'某检验板绝干重 1800 g，某时刻木材实重 2160 g，此时含水率 = ____%。', slots:[['20']], exp:'M = (2160 − 1800)/1800 × 100% = 20%。'}
 ];
 
 /* ================= 渲染 ================= */
@@ -1282,21 +1297,44 @@ var FB_ARCH='wd_fb_archive_v1';
   window.__fbLoad=fetchWall;
 })();
 
-/* ================= 模拟考试 ================= */
-var EXAM_GROUPS=[
-  {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['写出木材的三种水分（中英文）','写出三种干燥介质（中英文）','写出四个特种干燥方法（中英文）','写出三种基本传热方式']},
-  {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['吸湿滞后','相对湿度','绝对含水率','平衡含水率']},
-  {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['径切板较弦切板干燥慢','木材含水率越低越容易干燥','高温干燥适用于干燥阔叶材','解吸是指木材中自由水和吸着水的排除','若应力试片刚锯开时的形状是两半片向外弯曲']},
-  {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['What is the wood drying mechanism?','What is the purpose of wood drying?','How to determine the final moisture content','Draw the moisture content distribution curve','How to increase the drying speed of softwood?']},
-  {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某检验板截取后立即称重 3600 g','检验板初重 3600 g、初含水率 60%','水曲柳弦向干缩系数 0.338%']}
+/* ================= 模拟考试（多套试卷） ================= */
+var EXAM_PAPERS=[
+ {name:'试卷一 · 基础卷（期中口径）', groups:[
+   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['写出木材的三种水分（中英文）','写出三种干燥介质（中英文）','写出四个特种干燥方法（中英文）','写出三种基本传热方式']},
+   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['吸湿滞后（adsorption','相对湿度（relative humidity','绝对含水率（absolute','平衡含水率（EMC）']},
+   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['径切板较弦切板干燥慢','木材含水率越低越容易干燥','高温干燥适用于干燥阔叶材','解吸是指木材中自由水和吸着水的排除','若应力试片刚锯开时的形状是两半片向外弯曲']},
+   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['What is the wood drying mechanism?','What is the purpose of wood drying?','How to determine the final moisture content','Draw the moisture content distribution curve','How to increase the drying speed of softwood?']},
+   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某检验板截取后立即称重 3600 g','检验板初重 3600 g、初含水率 60%','水曲柳弦向干缩系数 0.338%']}
+ ]},
+ {name:'试卷二 · 综合卷（第1–4章）', groups:[
+   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['纤维饱和点在空气温度 20℃','干燥锯材最终含水率应比制品使用地点的平衡含水率低','木材各种方向上的绝干缩率','木材水分传导：顺纤维方向']},
+   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['纤维饱和点 FSP','解吸（desorption）','临界含水率 Mk','干燥基准（drying schedule）']},
+   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['同样温度与压力下，湿空气的密度比干空气小','纤维饱和点随温度升高而降低','干燥进行到木材含水率接近平衡含水率时','干燥室内 25 mm 以上的锯材','木材的电阻率（电阻率）随含水率升高而增大']},
+   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['简述木材干燥过程中应力与变形的四个阶段','简述干燥基准的含义、种类及波动式基准','简述预热处理、中间调湿处理与终了调湿处理的作用','检验板的使用要点','中期（中间）处理的目的、做法与效果判断']},
+   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某试片湿重 150 g','某树种弦向干缩系数 K = 0.30%','某检验板绝干重 1800 g']}
+ ]},
+ {name:'试卷三 · 设备与工艺卷（第5–6章）', groups:[
+   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['高温干燥的介质温度范围','蒸汽加热干燥室通常采用低压饱和水蒸气','干燥基准按控制因素分','干燥结束冷却卸出']},
+   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['干燥基准（drying schedule）','标准木料','表面硬化（case hardening','过热度（superheat degree']},
+   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['终了处理的时间大致按锯材每厚','材堆中各层隔条在高度上','用时间干燥基准操作时','连续式干燥室适用于批量较大','中间处理只会消除应力']},
+   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['隔条（dry finger）的作用','简述常规（周期式强制循环）干燥室各类型','中期（中间）处理的目的、做法与效果判断','检验板的使用要点','简述预热处理、中间调湿处理与终了调湿处理的作用']},
+   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某试片湿重 150 g','某检验板绝干重 1800 g','水曲柳弦向干缩系数 0.338%']}
+ ]},
+ {name:'试卷四 · 易错冲刺卷', groups:[
+   {title:'一、填空题（每题 5 分，共 20 分）', per:5, items:['木材各种方向上的绝干缩率','木材水分传导：顺纤维方向','直流电阻式测湿仪','微波加热对木材规定专用频率']},
+   {title:'二、名词解释（每题 5 分，共 20 分）', per:5, items:['吸湿滞后（adsorption','解吸（desorption）','临界含水率 Mk','表面硬化（case hardening']},
+   {title:'三、判断题（每题 2 分，共 10 分）', per:2, items:['对微波与高频：微波频率高','高温干燥适用于干燥阔叶材','解吸是指木材中自由水和吸着水的排除','木材的电阻率（电阻率）随含水率升高而增大','同样温度与压力下，湿空气的密度比干空气小']},
+   {title:'四、简答题（每题 6 分，共 30 分）', per:6, items:['Draw the moisture content distribution curve','简述木材干燥过程中应力与变形的四个阶段','How to increase the drying speed of softwood?','How to determine the final moisture content','What is the purpose of wood drying?']},
+   {title:'五、计算题（任选一组：A 组两题各 10 分；B 组 20 分）', special:'calc', items:['某试片湿重 150 g','某检验板绝干重 1800 g','水曲柳弦向干缩系数 0.338%']}
+ ]}
 ];
-var examState={a:{},self:{}};
-var examTimer=null, examLeft=90*60, examBuilt=false;
+var examPaper=0, examState={a:{},self:{}}, examTimer=null, examLeft=90*60, examBuilt=false;
 
 function findQ(sub){
   for(var i=0;i<BANK.length;i++){ if(BANK[i].q && BANK[i].q.indexOf(sub)===0) return BANK[i]; }
   return null;
 }
+function examGroups(){ return EXAM_PAPERS[examPaper].groups; }
 
 function examItem(q, gi, ii){
   var key=gi+'_'+ii;
@@ -1386,10 +1424,12 @@ function examItem(q, gi, ii){
   return div;
 }
 
-function renderExam(){
+function renderExam(pi){
+  if(typeof pi==='number'){ examPaper=pi; }
+  var sel=document.getElementById('exam-paper'); if(sel){ sel.selectedIndex=examPaper; }
   var body=document.getElementById('exam-body'); if(!body) return;
   body.innerHTML=''; examState={a:{},self:{}};
-  EXAM_GROUPS.forEach(function(g,gi){
+  examGroups().forEach(function(g,gi){
     var sec=document.createElement('div'); sec.className='examgroup';
     var h3=document.createElement('h3'); h3.textContent=g.title; sec.appendChild(h3);
     g.items.forEach(function(sub,ii){
@@ -1426,7 +1466,7 @@ function startTimer(){
 
 function submitExam(){
   var objTotal=0,objMax=0,selfTotal=0,selfMax=0,calcA=0,calcMaxA=0,calcB=0,calcMaxB=0;
-  EXAM_GROUPS.forEach(function(g,gi){
+  examGroups().forEach(function(g,gi){
     g.items.forEach(function(sub,ii){
       var q=findQ(sub); if(!q) return;
       var key=gi+'_'+ii;
@@ -1449,7 +1489,7 @@ function submitExam(){
   var r=document.getElementById('exam-result'); if(!r) return;
   r.style.display='block';
   var msg = total>=85?'🎉 优秀！':total>=70?'👍 不错，继续补薄弱点。':total>=60?'⚠ 及格边缘，建议回看错题。':'📌 基础还需巩固，先过一遍复习资料。';
-  r.innerHTML='<b>📊 交卷结果</b><br>客观题（选择/判断/填空）：<b>'+objTotal+' / '+objMax+'</b> 分'
+  r.innerHTML='<b>📊 交卷结果 · '+EXAM_PAPERS[examPaper].name+'</b><br>客观题（判断/填空）：<b>'+objTotal+' / '+objMax+'</b> 分'
     +'<br>主观题（名词/简答·自评）：<b>'+selfTotal+' / '+selfMax+'</b> 分'
     +'<br>计算题（两组取高）：<b>'+calcScore+' / 20</b> 分'
     +'<br>——<br><b>总分：'+total+' / 100</b> '+msg;
@@ -1457,10 +1497,12 @@ function submitExam(){
 }
 
 (function(){
-  var sb=document.getElementById('exam-submit'), rb=document.getElementById('exam-reset');
+  var sb=document.getElementById('exam-submit'), rb=document.getElementById('exam-reset'), sel=document.getElementById('exam-paper');
   if(sb){ sb.addEventListener('click',submitExam); }
   if(rb){ rb.addEventListener('click',function(){ renderExam(); }); }
+  if(sel){ sel.addEventListener('change',function(){ renderExam(sel.selectedIndex); }); }
 })();
+
 
 buildChips();
 showView('review');
