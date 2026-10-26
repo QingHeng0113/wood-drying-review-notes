@@ -157,6 +157,9 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 .examitem .qbtns button.vague{background:rgba(201,134,46,.15);border-color:var(--amber);color:#8a6417}
 .examitem .qbtns button.lost{background:rgba(178,58,46,.12);border-color:var(--red);color:var(--red)}
 
+.fbwall{max-height:420px;overflow:auto;margin-top:6px}
+.fbmsg{background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:6px 0;font-size:13px;white-space:pre-wrap;word-break:break-word}
+.fbmsg .fbt{font-size:11px;color:var(--faint);display:block;margin-bottom:2px}
 /* ---------- 移动端适配（手机浏览器/微信内） ---------- */
 @media (max-width:700px){
   header{padding:10px 12px 0}
@@ -760,20 +763,26 @@ footer{max-width:1080px;margin:0 auto;padding:10px 16px 30px;font-size:11px;colo
 <section id="view-feedback" hidden>
 <div class="sec">
 <h2>💬 匿名意见 <span class="en">Anonymous feedback</span></h2>
-<p class="note">无需登录、不收集姓名与联系方式，可提问题、报错或提建议。<b>提交后不会显示任何个人信息。</b></p>
+<p class="note">无需登录、不收集姓名与联系方式。提交后留言会以匿名形式显示在下方（公开可见），可以提问、报错或提建议。</p>
 <div class="fbbox">
   <div class="fbrow"><label>类型：</label>
     <select id="fb-type">
       <option>提问</option><option>内容纠错</option><option>功能建议</option><option>其它</option>
     </select>
+    <span style="flex:1"></span>
+    <button id="fb-refresh" class="actbtn">🔄 刷新留言</button>
   </div>
   <textarea id="fb-text" placeholder="写下你的问题或意见（例如：某题答案是否有误 / 想补充哪个考点 / 页面哪里打不开）"></textarea>
   <div class="qbtns">
+    <button id="fb-send" class="primary actbtn">📮 匿名提交</button>
     <button id="fb-copy" class="actbtn">📋 复制内容</button>
-    <button id="fb-open" class="primary actbtn">打开匿名收集表 →</button>
+    <button id="fb-open" class="actbtn" style="display:none">打开收集表 →</button>
   </div>
-  <p class="note" id="fb-hint" style="margin-top:8px">收集表尚未接入：可先点「复制内容」，把问题发到班级群或课代表处。管理员配置收集表链接后，此按钮会直接打开。</p>
+  <p class="note" id="fb-hint" style="margin-top:8px"></p>
 </div>
+<h3>📮 最近匿名留言</h3>
+<div id="fb-wall" class="fbwall"><p class="note">加载中…</p></div>
+<p class="note" style="font-size:11px;margin-top:10px">说明：留言板为公开匿名，请勿填写个人隐私信息；服务器仅保留最近 12 小时的留言，本机会自动存档已加载的留言。</p>
 </div>
 </section>
 
@@ -970,6 +979,7 @@ function showView(name){
   }
   renderQuiz();
   if(name==='exam'){ if(!examBuilt){ renderExam(); examBuilt=true; } startTimer(); }
+  if(name==='feedback' && window.__fbLoad){ window.__fbLoad(); }
   window.scrollTo(0,0);
 }
 document.querySelectorAll('nav button').forEach(function(b){
@@ -1197,33 +1207,79 @@ var shufBtn=$('#btn-shuffle');
 if(shufBtn){ shufBtn.addEventListener('click',function(){ order=shuffled(); renderQuiz(); document.getElementById('view-quiz').scrollIntoView(); }); }
 
 
-/* ================= 匿名意见 ================= */
-var FB_URL='';  /* 管理员配置收集表链接后填入，如 'https://...'；留空则只支持复制 */
+/* ================= 匿名意见（匿名留言板） ================= */
+var FB_TOPIC='wdnotes-fb-740vl3psnm2vaj';   /* 匿名留言板主题（随机、不可猜） */
+var FB_URL='';              /* 如果以后接入腾讯收集表，把链接填这里；填了就改走链接 */
+var FB_ARCH='wd_fb_archive_v1';
 (function(){
-  var ta=document.getElementById('fb-text'), ty=document.getElementById('fb-type'), hint=document.getElementById('fb-hint');
+  var ta=document.getElementById('fb-text'), ty=document.getElementById('fb-type'),
+      hint=document.getElementById('fb-hint'), wall=document.getElementById('fb-wall');
   if(!ta) return;
-  function compose(){
-    return '【'+ty.value+'】\n'+(ta.value||'（未填写内容）')+'\n—— 来自木材干燥学复习页面';
+  if(FB_URL){
+    var ob=document.getElementById('fb-open'); if(ob) ob.style.display='';
+    var sb=document.getElementById('fb-send'); if(sb) sb.style.display='none';
   }
-  function fallbackCopy(){
-    ta.select();
-    try{ document.execCommand('copy'); hint.textContent='✅ 已复制，可粘贴到班级群/课代表处。'; }
-    catch(e){ hint.textContent='复制失败，请手动全选复制。'; }
+  function compose(){ return '【'+ty.value+'】\n'+(ta.value||'（未填写内容）'); }
+  function p2(n){ return (n<10?'0':'')+n; }
+  function fmt(ts){ var d=new Date(ts*1000); return (d.getMonth()+1)+'-'+p2(d.getDate())+' '+p2(d.getHours())+':'+p2(d.getMinutes()); }
+  function loadArchive(){ try{ return JSON.parse(localStorage.getItem(FB_ARCH))||[]; }catch(e){ return []; } }
+  function saveArchive(a){ try{ localStorage.setItem(FB_ARCH, JSON.stringify(a.slice(-300))); }catch(e){} }
+  function renderWall(msgs){
+    if(!wall) return;
+    if(!msgs.length){ wall.innerHTML='<p class="note">还没有留言，来写下第一条吧。</p>'; return; }
+    wall.innerHTML='';
+    msgs.sort(function(a,b){ return b.time-a.time; }).forEach(function(m){
+      var d=document.createElement('div'); d.className='fbmsg';
+      d.innerHTML='<span class="fbt">'+fmt(m.time)+'</span>'+esc(m.text);
+      wall.appendChild(d);
+    });
+  }
+  function fetchWall(){
+    if(!wall) return;
+    wall.innerHTML='<p class="note">加载中…</p>';
+    fetch('https://ntfy.sh/'+encodeURIComponent(FB_TOPIC)+'/json?poll=1&since=all', {cache:'no-store'})
+      .then(function(r){ return r.text(); })
+      .then(function(txt){
+        var arch=loadArchive(), byId={};
+        arch.forEach(function(m){ byId[m.id]=1; });
+        txt.split('\n').filter(Boolean).forEach(function(line){
+          try{
+            var o=JSON.parse(line);
+            if(o.event==='message' && o.message){
+              if(!byId[o.id]){ arch.push({id:o.id, time:o.time, text:o.message}); byId[o.id]=1; }
+            }
+          }catch(e){}
+        });
+        saveArchive(arch);
+        renderWall(arch);
+      })
+      .catch(function(){
+        var arch=loadArchive();
+        if(arch.length){ renderWall(arch); hint.textContent='（离线：显示本机存档的留言）'; }
+        else { wall.innerHTML='<p class="note">留言加载失败（网络问题），可稍后点「刷新留言」。</p>'; }
+      });
+  }
+  if(!FB_URL){
+    document.getElementById('fb-send').addEventListener('click',function(){
+      var text=(ta.value||'').trim();
+      if(!text){ hint.textContent='⚠ 请先写内容再提交。'; return; }
+      hint.textContent='提交中…';
+      fetch('https://ntfy.sh/'+encodeURIComponent(FB_TOPIC), {method:'POST', body:compose()})
+        .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); ta.value=''; hint.textContent='✅ 已匿名提交，留言会出现在下方。'; setTimeout(fetchWall, 1500); })
+        .catch(function(){ hint.textContent='⚠ 提交失败（网络或服务问题），请稍后重试，或用「复制内容」发给课代表。'; });
+    });
   }
   document.getElementById('fb-copy').addEventListener('click',function(){
     var txt=compose();
+    function done(){ hint.textContent='✅ 已复制，可粘贴到班级群/课代表处。'; }
     if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(txt).then(function(){ hint.textContent='✅ 已复制，可粘贴到班级群/课代表处。'; }, fallbackCopy);
-    } else { fallbackCopy(); }
+      navigator.clipboard.writeText(txt).then(done, function(){ ta.select(); try{document.execCommand('copy');done();}catch(e){hint.textContent='复制失败，请手动复制。';} });
+    } else { ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ hint.textContent='复制失败，请手动复制。'; } }
   });
-  document.getElementById('fb-open').addEventListener('click',function(){
-    if(FB_URL){
-      var sep = FB_URL.indexOf('?')>-1 ? '&' : '?';
-      window.open(FB_URL + sep + 'text=' + encodeURIComponent(compose()), '_blank');
-    } else {
-      hint.textContent='⚠ 收集表尚未接入：请先点「复制内容」发给课代表；管理员配置链接后此按钮可直接打开。';
-    }
-  });
+  var ob=document.getElementById('fb-open');
+  if(ob){ ob.addEventListener('click',function(){ if(FB_URL){ window.open(FB_URL,'_blank'); } }); }
+  document.getElementById('fb-refresh').addEventListener('click',fetchWall);
+  window.__fbLoad=fetchWall;
 })();
 
 /* ================= 模拟考试 ================= */
